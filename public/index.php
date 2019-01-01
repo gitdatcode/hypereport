@@ -1,5 +1,8 @@
 <?php
 include '../src/report.php';
+include '../src/Template.php';
+
+$template = new Template(__DIR__ .'/../src/templates');
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -61,49 +64,30 @@ include '../src/report.php';
       </div>
     </section>
     <?php
-$count = 1;
-$setIndex = 0;
-$schemeIndex = 0;
-$colorSchemeSets = include '../src/colorschemes.php';
-$currentSet = $colorSchemeSets[$setIndex];
-$scheme = $currentSet[$schemeIndex];
-?>
-    <?php foreach ($reports as $report): ?>
-    <section class="jumbotron report" id="report_<?php echo sprintf("%02d", $count); ?>">
-      <?php printStyle($report, sprintf("%02d", $count), $scheme); ?>
-      <div>
-        <article>
-            <h2><?php echo sprintf("%02d", $count); ?></h2>
-            <h1 class="display-4"><?php echo $report['firstName'] . ' ' . $report['lastInitial'] . '.'; ?></h1>
-            <p class="lead"><?php echo $report['text']; ?></p>
-            <a
-                class="btn btn-primary btn-lg"
-                href="https://twitter.com/home?status=Check%20out%20<?php echo $report['firstName']; ?>'s%202018%20Hype%20Report!%3A%20https%3A//hype.report%23report_<?php echo sprintf("%02d", $count); ?>"
-                role="button">
-                Hype This
-            </a>
-        </article>
-        <?php if (!empty($report['moreHype'])): ?>
-        <aside>
-          <h3>More Hype</h3>
-          <p><?php echo $report['moreHype']; ?></p>  
-        </aside>
-        <?php endif; ?>
-      </div>
-    </section>
-    <?php
-    if ($count % 4 == 0) {
-      $setIndex = empty($colorSchemeSets[$setIndex+1])
-        ? 0
-        : $setIndex+1;
-      $schemeIndex = 0;
-      $currentSet = $colorSchemeSets[$setIndex];
-    } else {
-      $schemeIndex++;
-    }
-      $scheme = $currentSet[$schemeIndex];
-    $count++;
-    endforeach; ?>
+        $count = 1;
+        $setIndex = 0;
+        $schemeIndex = 0;
+        $colorSchemeSets = include '../src/colorschemes.php';
+        $currentSet = $colorSchemeSets[$setIndex];
+        $scheme = $currentSet[$schemeIndex];
+
+        foreach ($reports as $report){
+            echo $template->render('hype.html', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
+
+            if ($count % 4 == 0) {
+              $setIndex = empty($colorSchemeSets[$setIndex+1])
+                ? 0
+                : $setIndex+1;
+              $schemeIndex = 0;
+              $currentSet = $colorSchemeSets[$setIndex];
+            } else {
+              $schemeIndex++;
+            }
+
+            $scheme = $currentSet[$schemeIndex];
+            $count++;
+        }
+    ?>
 </div>
   <script src="js/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
