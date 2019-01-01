@@ -7,7 +7,6 @@ $template = new Template(__DIR__ .'/../src/templates');
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131436546-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -24,7 +23,6 @@ $template = new Template(__DIR__ .'/../src/templates');
 
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
-  <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/hype.css">
@@ -35,7 +33,6 @@ $template = new Template(__DIR__ .'/../src/templates');
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
 <div class="main container-fluid">
     <section class="jumbotron introduction">
       <div>
@@ -72,7 +69,7 @@ $template = new Template(__DIR__ .'/../src/templates');
         $scheme = $currentSet[$schemeIndex];
 
         foreach ($reports as $report){
-            echo $template->render('hype.html', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
+            echo $template->render('hype.php', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
 
             if ($count % 4 == 0) {
               $setIndex = empty($colorSchemeSets[$setIndex+1])
