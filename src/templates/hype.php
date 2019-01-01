@@ -24,6 +24,7 @@ $scheme = $this->get('scheme');
             <p class="lead"><?php echo $report['text']; ?></p>
             <a
                 class="btn btn-primary btn-lg"
+                target="_blank"
                 href="https://twitter.com/home?status=Check%20out%20<?php echo $report['firstName']; ?>'s%202018%20Hype%20Report!%3A%20https%3A//hype.report%23report_<?php echo sprintf("%02d", $count); ?>" role="button">
                 Hype This
             </a>
