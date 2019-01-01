@@ -1,4 +1,4 @@
-<?php $fillColor = empty($_GET['fillColor']) ? '' : $_GET['fillColor']; header('Content-type: image/svg+xml'); ?>
+<?php include '../../src/svg.php'; ?>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1000 585" enable-background="new 0 0 1000 585" xml:space="preserve">
 <path fill="#<?php echo $fillColor; ?>" d="M1001.5,189.4c-5,6.9-9.8,13.8-15.1,20.5c-5.4,6.9-13.1,9.4-21.5,10.7c-12.4,1.9-24.7,4.5-37,6.9c-1.2,0.2-2.9,1.2-3.3,2.3

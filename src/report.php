@@ -246,4 +246,14 @@ $reports = [
         'color' => '#70002e',
         'fillColor' => '',
     ],
+    [
+        'id' => 23,
+        'firstName' => 'DATCODE',
+        'lastInitial' => '',
+        'text' => "This year we did the most and then did some more. We reached over 300 members, and saw several of y'all launch your own projects. We also became an official non profit organization, setting us up for an amazing 2019. We couldn't have done this without y'all and we're looking forward to a bigger, louder, 2019.",
+        'moreHype' => "Do The Most!",
+        'icon' => 'contentstrategy',
+        'color' => '#70002e',
+        'fillColor' => '',
+    ],
 ];
