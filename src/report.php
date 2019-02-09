@@ -20,6 +20,10 @@ $style = <<<EOT
  #report_$count article {
     border-bottom: 1px solid #{$scheme['highlight']};
 }
+ #report_$count .hypebtn {
+    display: none;
+    background-color: #{$scheme['highlight']};
+}
 </style>
 EOT;
 error_log($style);

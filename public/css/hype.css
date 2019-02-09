@@ -6,8 +6,8 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
-.introduction {
-    background-color: #000000;
+.introduction, .footer {
+    background-color: rgb(15,15,15);
     color: #ffffff;
     width: 100%;
     padding: 0;
@@ -145,5 +145,10 @@ body {
         width: 100vw;
         padding: 15px;
     }
-
+}
+.footer {
+    font-size: 4em;
+}
+.footer a {
+    color: #00e0ff;
 }

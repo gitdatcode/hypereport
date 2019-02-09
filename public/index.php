@@ -20,6 +20,18 @@ $template = new Template(__DIR__ .'/../src/templates');
   <title>DATCODE 2018 HYPE REPORT</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:url" content="https://hype.report" />
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="DATCODE 2018 Hype Report" />
+  <meta property="og:description" content="Our community did the most this year. Come check us out!" />
+  <meta property="og:image" content="https://hype.report/images/hypereport.png" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@talkdatcode">
+  <meta name="twitter:creator" content="@talkdatcode">
+  <meta name="twitter:title" content="DATCODE 2018 Hype Report">
+  <meta name="twitter:description" content="Our community did the most this year. Come check us out!">
+  <meta name="twitter:image" content="https://hype.report/images/hypereport.png">
 
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
@@ -69,7 +81,7 @@ $template = new Template(__DIR__ .'/../src/templates');
         $scheme = $currentSet[$schemeIndex];
 
         foreach ($reports as $report){
-            echo $template->render('hype.php', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
+            echo $template->render('00-hype.php', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
 
             if ($count % 4 == 0) {
               $setIndex = empty($colorSchemeSets[$setIndex+1])
@@ -85,6 +97,13 @@ $template = new Template(__DIR__ .'/../src/templates');
             $count++;
         }
     ?>
+    <section class="jumbotron footer">
+      <div>
+        <article>
+          Come join us at <a href="http://www.datcode.io/#sign-up">datcode.io</a>!
+        </article>
+      </div>
+    </section>
 </div>
   <script src="js/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
