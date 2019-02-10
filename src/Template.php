@@ -1,4 +1,5 @@
 <?php
+namespace HypeReport;
 
 class Template{
     private $variables = [];
