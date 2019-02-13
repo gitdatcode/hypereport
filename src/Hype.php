@@ -4,8 +4,9 @@ namespace HypeReport;
 class Hype
 {
 
-    public function __construct()
+    public function index()
     {
+        $this->hypeByMonth('january');
     }
 
     public function hypeByMonth(string $month)
