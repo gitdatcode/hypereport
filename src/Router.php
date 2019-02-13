@@ -35,7 +35,9 @@ class Router
 
                 break;
             case \FastRoute\Dispatcher::NOT_FOUND:
+                http_response_code(404);
                 dd('where girl');
+
                 break;
             case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $allowedMethods = $routeInfo[1];

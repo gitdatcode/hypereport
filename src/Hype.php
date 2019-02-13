@@ -8,8 +8,9 @@ class Hype
     {
     }
 
-    public function hypeByMonth(string $month): Template
+    public function hypeByMonth(string $month)
     {
-        echo $month;
+        $reports = include "/var/www/hypereport.ann/reports/january.php";
+        include "/var/www/hypereport.ann/templates/$month.php";
     }
 }

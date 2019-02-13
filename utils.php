@@ -11,6 +11,11 @@ function getBaseUrl()
     return config('baseUrl');
 }
 
+function getAssetUrl()
+{
+    return config('assetUrl');
+}
+
 function getPath()
 {
     return config('basePath');
@@ -24,6 +29,17 @@ function getHypePath()
 function url($path, $return = false)
 {
     $url = getBaseUrl() . $path;
+
+    if ($return) {
+        return $url;
+    } else {
+        echo $url;
+    }
+}
+
+function asset($path, $return = false)
+{
+    $url = getAssetUrl() . $path;
 
     if ($return) {
         return $url;
