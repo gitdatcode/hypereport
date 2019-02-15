@@ -1,29 +1,79 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i');
+@import "../../../css/fonts.css";
 html,
 body {
-    background: rgb(44,48,54);
-    background: linear-gradient(158deg, rgba(44,48,54,1) 0%, rgba(28,30,31,1) 45%, rgba(69,70,70,1) 100%);
+    background: rgb(206,0,236);
+    background: linear-gradient(158deg, rgba(206,0,236,1) 0%, rgba(205,0,255,1) 45%, rgba(255,4,34,1) 100%);
     background-attachment: fixed;
     color: #ededed;
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
     font-weight: 300;
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 .reports {
     width: 100%;
     margin: 0 auto;
 }
+.summary {
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
+}
+
+.summary h1 {
+    font-size: 5rem;
+    letter-spacing: .2rem;
+    font-family: "Gilmer-Bold", Helvetica, Arial, sans-serif;
+}
 
 .report {
     background-color: #000000;
-    border-bottom: 20px solid rgb(44,48,54);
-    box-shadow: 2rem 0 4rem 0.25rem rgba(26, 23, 35, 0.575);
+    margin-bottom: 20px;
+    box-shadow: 2rem 2rem 4rem 0.25rem rgba(26, 23, 35, 0.575);
 }
 .report article {
     padding: 3em;
 }
 
-.report .report__title {
+.report .report__title  {
     font-family: 'Abril Fatface', 'Times New Roman', Times, serif;
     font-weight: 600;
     font-size: 3.5em;
@@ -64,7 +114,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 0;
+    margin-bottom: 0;
     min-height: 25vh;
     font-size: 2em;
     text-align: center;
@@ -74,14 +124,13 @@ body {
     body {
         width: 100%;
         height: 100%;
+        display: flex;
     }
 
     .wrapper {
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
-        border: 100px solid red;
+        height: 90vh;
     }
 
     .reports {
@@ -92,7 +141,7 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        box-shadow: 0 2rem 4rem 0.25rem rgba(26, 23, 35, 0.575);
+        box-shadow: 2rem 2rem 4rem 0.25rem rgba(26, 23, 35, 0.575);
     }
 
     .report {
@@ -107,8 +156,8 @@ body {
 
         position: relative;
         overflow: hidden;
-        border-bottom: 0;
-        border-right: 30px solid rgb(44,48,54);
+        margin-bottom: 0;
+        margin-right: 30px;
     }
 
     .report img {
@@ -128,7 +177,11 @@ body {
     }
 
     .summary {
-        border-left: 30px solid rgb(44,48,54);
+        margin-left: 30px;
         width: 35vw;
+    }
+
+    .summary h2 {
+        font-size: 3rem;
     }
 }
