@@ -6,7 +6,7 @@ class Hype
 
     public function index()
     {
-        $this->hypeByMonth('january');
+        $this->hypeByMonth('february');
     }
 
     public function hypeByMonth(string $month)
