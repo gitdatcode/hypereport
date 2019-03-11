@@ -1,0 +1,187 @@
+@import "../../../css/fonts.css";
+html,
+body {
+    background: rgb(206,0,236);
+    background: linear-gradient(158deg, rgba(206,0,236,1) 0%, rgba(205,0,255,1) 45%, rgba(255,4,34,1) 100%);
+    background-attachment: fixed;
+    color: #ededed;
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.reports {
+    width: 100%;
+    margin: 0 auto;
+}
+.summary {
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
+}
+
+.summary h1 {
+    font-size: 5rem;
+    letter-spacing: .2rem;
+    font-family: "Gilmer-Bold", Helvetica, Arial, sans-serif;
+}
+
+.report {
+    background-color: #000000;
+    margin-bottom: 20px;
+    box-shadow: 2rem 2rem 4rem 0.25rem rgba(26, 23, 35, 0.575);
+}
+.report article {
+    padding: 3em;
+}
+
+.report .report__title  {
+    font-family: 'Abril Fatface', 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 3.5em;
+    word-spacing: .3em;
+}
+
+.report .report__text {
+    font-size: 1em;
+}
+
+.report img {
+    height: auto;
+    width: 100%;
+}
+
+.report__hype {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    margin-top: 10px;
+    padding: 1em 2em;
+    background-color: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    font-weight: bold;
+    transition: background-color 1s ease-out;
+}
+
+.report__hype:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 1s ease-out;
+    text-decoration: none;
+}
+
+.conclusion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    min-height: 25vh;
+    font-size: 2em;
+    text-align: center;
+}
+
+@media screen and (min-width: 599px) {
+    body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        height: 90vh;
+    }
+
+    .reports {
+        height: 55vh;
+        min-height: 500px;
+        width: auto;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        box-shadow: 2rem 2rem 4rem 0.25rem rgba(26, 23, 35, 0.575);
+    }
+
+    .report {
+        width: 75vw;
+        height: 100%;
+
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0;
+        margin-right: 30px;
+    }
+
+    .report img {
+        height: 100%;
+        width: auto;
+    }
+
+    .report article {
+        padding: 8em;
+    }
+    .report .report__title {
+        font-size: 4.5em;
+    }
+
+    .report .report__text {
+        font-size: 1.5em;
+    }
+
+    .summary {
+        margin-left: 30px;
+        width: 35vw;
+    }
+
+    .summary h2 {
+        font-size: 3rem;
+    }
+}

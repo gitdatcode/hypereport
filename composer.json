@@ -1,0 +1,17 @@
+{
+    "name": "datcode/hypereport",
+    "description": "Monthly Hype Report",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ann Daramola",
+            "email": "ann.daramola@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"HypeReport\\": "src/"}
+    },
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}

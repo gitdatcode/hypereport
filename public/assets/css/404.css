@@ -1,0 +1,34 @@
+@import "../../../css/fonts.css";
+html,
+body {
+    background: rgb(206,0,236);
+    background: linear-gradient(158deg, rgba(206,0,236,1) 0%, rgba(205,0,255,1) 45%, rgba(255,4,34,1) 100%);
+    background-attachment: fixed;
+    color: #ededed;
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+    min-height: 50vh;
+    width: 95vw;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #ffffff;
+}
