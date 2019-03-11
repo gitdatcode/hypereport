@@ -1,0 +1,12 @@
+.report__hype {
+    display: none;
+    border: 1px solid #ffffff;
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    position: relative;
+    top: 4rem;
+}
+
+.report__hype.live {
+    display: block;
+}

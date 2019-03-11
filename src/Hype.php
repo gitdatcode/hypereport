@@ -11,9 +11,9 @@ class Hype
 
     public function hypeByMonth(string $month)
     {
-        if (file_exists(config('basePath'). "/reports/$month.php")
+        if (file_exists(config('basePath'). "/reports/2019/$month.php")
             && file_exists(config('basePath') . "/templates/$month.php")) {
-            $reports = include config('basePath') . "/reports/january.php";
+            $reports = include config('basePath') . "/reports/2019/$month.php";
             include config('basePath') . "/templates/$month.php";
         } else {
             http_response_code(404);
