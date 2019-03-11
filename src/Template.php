@@ -1,7 +1,9 @@
 <?php
+namespace HypeReport;
 
 class Template{
     private $variables = [];
+    private $_base_directory;
 
     public function __construct($base_directory){
         $this->_base_directory = $base_directory;
