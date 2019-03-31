@@ -36,7 +36,7 @@ $router->get('/{year:\d{4}}/{month:\d{2}}', function($month, $year) use ($router
 /**
  * get all of the resources for a given year
  */
-$router->get('/{year:\d{4}', function($year) use ($router) {
+$router->get('/{year:\d{4}}', function($year) use ($router) {
     $months_year = \App\MonthYear::where('year', $year)
         ->get();
     $ids = [];
@@ -45,7 +45,7 @@ $router->get('/{year:\d{4}', function($year) use ($router) {
         $ids[] = $my->id;
     }
 
-    $resources = \App\Resource::where('month_year_id', 'in', $month_year->id)
+    $resources = \App\Resource::whereIn('month_year_id', $ids)
         ->get();
 
     echo $resources;
