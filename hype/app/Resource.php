@@ -28,5 +28,6 @@ class Resource extends Model implements AuthenticatableContract, AuthorizableCon
         'image_2',
         'image_3',
         'username',
+        'month_year_id',
     ];
 }
