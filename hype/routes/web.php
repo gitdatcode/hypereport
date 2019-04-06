@@ -13,10 +13,11 @@ $router->get('/', function () use ($router) {
 /**
  * get the resources for a specific month
  */
-$router->get('/{year:\d{4}}/{month:\d{2}}', function($month, $year) use ($router) {
+$router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($router) {
     $month_year = \App\MonthYear::where('month', $month)
         ->where('year', $year)
         ->first();
+    # TODO: return here if there is no $month_year
     $resources = \App\Resource::where('month_year_id', $month_year->id)
         ->get();
 
