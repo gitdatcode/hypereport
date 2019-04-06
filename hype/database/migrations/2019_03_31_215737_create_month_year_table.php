@@ -16,13 +16,13 @@ class CreateMonthYearTable extends Migration
         Schema::create('month_year', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
             $table->timestamps();
-            $table->string('title');
-            $table->text('description');
-            $table->integer('month');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('month')->nullable();
             $table->integer('year');
-            $table->string('theme');
-            $table->text('theme_css');
-            $table->text('theme_js');
+            $table->string('theme')->nullable();
+            $table->text('theme_css')->nullable();
+            $table->text('theme_js')->nullable();
         });
     }
 
