@@ -1,0 +1,87 @@
+/*
+Font: 		Gilmer
+URL: 		https://www.youworkforthem.com/font/T9758/gilmer
+Foundry: 	Piotr Lapa
+Foundry: 	https://www.youworkforthem.com/designer/1166/piotr-lapa
+Copyright:	Copyright © 2018 by Piotr _apa. All rights reserved.
+Version: 	17
+Created:	August 17, 2018
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'Gilmer-Bold';
+	src: url('../fonts/gilmer-bold.eot');
+	src: url('../fonts/gilmer-bold.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-bold.woff2') format('woff2'),
+	     url('../fonts/gilmer-bold.woff') format('woff'),
+	     url('../fonts/gilmer-bold.ttf') format('truetype'),
+	     url('../fonts/gilmer-bold.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilmer-Heavy';
+	src: url('../fonts/gilmer-heavy.eot');
+	src: url('../fonts/gilmer-heavy.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-heavy.woff2') format('woff2'),
+	     url('../fonts/gilmer-heavy.woff') format('woff'),
+	     url('../fonts/gilmer-heavy.ttf') format('truetype'),
+	     url('../fonts/gilmer-heavy.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gilmer-Regular';
+	src: url('../fonts/gilmer-regular.eot');
+	src: url('../fonts/gilmer-regular.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-regular.woff2') format('woff2'),
+	     url('../fonts/gilmer-regular.woff') format('woff'),
+	     url('../fonts/gilmer-regular.ttf') format('truetype'),
+	     url('../fonts/gilmer-regular.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Gilmer-Outline';
+	src: url('../fonts/gilmer-outline.eot');
+	src: url('../fonts/gilmer-outline.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-outline.woff2') format('woff2'),
+	     url('../fonts/gilmer-outline.woff') format('woff'),
+	     url('../fonts/gilmer-outline.ttf') format('truetype'),
+	     url('../fonts/gilmer-outline.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Gilmer-Medium';
+	src: url('../fonts/gilmer-medium.eot');
+	src: url('../fonts/gilmer-medium.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-medium.woff2') format('woff2'),
+	     url('../fonts/gilmer-medium.woff') format('woff'),
+	     url('../fonts/gilmer-medium.ttf') format('truetype'),
+	     url('../fonts/gilmer-medium.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilmer-Light';
+	src: url('../fonts/gilmer-light.eot');
+	src: url('../fonts/gilmer-light.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/gilmer-light.woff2') format('woff2'),
+	     url('../fonts/gilmer-light.woff') format('woff'),
+	     url('../fonts/gilmer-light.ttf') format('truetype'),
+	     url('../fonts/gilmer-light.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

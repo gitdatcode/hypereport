@@ -1,0 +1,154 @@
+@import "fonts.css";
+body {
+    font-family: "Gilmer-Regular", Helvetica, Arial, sans-serif;
+}
+.hype .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+.introduction, .footer {
+    background-color: rgb(15,15,15);
+    color: #ffffff;
+    width: 100%;
+    padding: 0;
+}
+    .introduction div {
+        width: 100%;
+    }
+    .introduction h1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 10rem;
+        position: relative;
+        width: 100%;
+        padding-left: 20px;
+        font-family: "Gilmer-Bold", Helvetica, Arial, sans-serif;
+    }
+        .introduction h1 strong {
+            font-family: "Gilmer-Outline", Helvetica, Arial, sans-serif;
+        }
+    .introduction h2 {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: "Gilmer-Bold", Helvetica, Arial, sans-serif;
+        font-size: 3rem;
+        padding-right: 15px;
+    }
+    .introduction aside {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 3rem;
+        font-family: "Gilmer-Bold", Helvetica, Arial, sans-serif;
+        text-align: center;
+    }
+    .introduction ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+        .introduction ul li {
+            width: 100%;
+            height: 3px;
+            margin: 8px 0;
+        }
+        .introduction ul li.line1 {
+            background-color: #ef0053;
+        }
+        .introduction ul li.line2 {
+            background-color: #ffd703;
+        }
+        .introduction ul li.line3 {
+            background-color: #00ff8b;
+        }
+        .introduction ul li.line4 {
+            background-color: #00e0ff;
+        }
+        .introduction ul li.line5 {
+            background-color: #9e00ff;
+        }
+.hype .jumbotron {
+    min-height: 100vh;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hype .report {
+    min-height: calc( 100vh - 20px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    color: #ffffff;
+}
+    .hype .report article,
+    .hype .report aside {
+        margin: 0 auto;
+        min-width: 500px;
+        width: 50%;
+        padding-bottom: 20px;
+    }
+    .hype .report aside {
+        padding: 3em;
+        font-size: 1.5rem;
+    }
+        .hype .report aside h3 {
+            font-family: "Gilmer-Outline", Helvetica, Arial, sans-serif;
+            font-size: 4rem;
+            text-transform: uppercase;
+        }
+        .hype .report article h1 {
+            font-family: "Gilmer-Heavy", Helvetica, Arial, sans-serif;
+            font-size: 2.5rem;
+        }
+        .hype .report article h2 {
+            font-family: "Gilmer-Outline", Helvetica, Arial, sans-serif;
+            font-size: 5rem;
+        }
+        .hype .report article p,
+        .hype .report article ul {
+            font-size: 2.5rem;
+            font-family: "Gilmer-Medium", Helvetica, Arial, sans-serif;
+        }
+
+
+@media only screen and (max-width: 600px) {
+  body,html {
+    font-size: 10px;
+  }
+    .introduction h1 {
+        position: relative;
+        font-size: 6rem;
+        text-align: center;
+    }
+    .introduction h2 {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .hype .report {
+        border-bottom: 1px solid #ffffff;
+    }
+    .hype .report article,
+    .hype .report aside {
+        min-width: 50%;
+        max-width: 100vw;
+        width: 100vw;
+        padding: 15px;
+    }
+}
+.footer {
+    font-size: 4em;
+}
+.footer a {
+    color: #00e0ff;
+}

@@ -90,7 +90,7 @@ class Jan2019 extends Migration
         ];
 
         foreach($reports as $entry){
-            DB::table('resource')->insert($entry);
+            DB::table('report')->insert($entry);
         }
     }
 

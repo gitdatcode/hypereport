@@ -1,8 +1,9 @@
-<section class="jumbotron report" id="report_<?php echo sprintf("%02d", $count); ?>">
+<php $count = sprintf("%02d", $count); ?>
+<section class="jumbotron report" id="report_<?php echo $count; ?>">
     <style>
     <?php list($r, $g, $b) = sscanf("#{$scheme['highlight']}", "#%02x%02x%02x"); ?>
          #report_<?php echo $count; ?> {
-             background-image:url(/images/<?php echo $report['icon']; ?>_svg.php?fillColor=<?php echo $scheme['foreground']; ?>);
+             background-image:url(/theme/year/2018/images/<?php echo $report->image_1; ?>_svg.php?fillColor=<?php echo $scheme['foreground']; ?>);
              background-color: #<?php echo $scheme['background']; ?>;
          }
          #report_<?php echo $count; ?> h1, 
@@ -26,8 +27,8 @@
     <div>
         <article>
             <h2><?php echo $count; ?></h2>
-            <h1 class="display-4"><?php echo $report['firstName'] . ' ' . $report['lastInitial'] . '.'; ?></h1>
-            <p class="lead"><?php echo $report['text']; ?></p>
+            <h1 class="display-4"><?php echo $report->username; ?></h1>
+            <p class="lead"><?php echo $report->description; ?></p>
             <a
                 class="hypebtn btn btn-lg"
                 target="_blank"
@@ -35,10 +36,10 @@
                 Hype This
             </a>
         </article>
-        <?php if (!empty($report['moreHype'])): ?>
+        <?php if (!empty($report->description2)): ?>
         <aside>
           <h3>More Hype</h3>
-          <p><?php echo $report['moreHype']; ?></p>  
+          <p><?php echo $report->description_2; ?></p>  
         </aside>
         <?php endif; ?>
     </div>

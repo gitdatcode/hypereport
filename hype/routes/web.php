@@ -18,32 +18,32 @@ $router->get('/', function () use ($router, $template_loader) {
 
 
 /**
- * get the resources for a specific month
+ * get the reports for a specific month
  */
 $router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($router, $template_loader) {
-    $resources = [];
+    $reports = [];
     $month_year = \App\MonthYear::where('month', $month)
         ->where('year', $year)
         ->first();
 
     if($month_year){
-        $resources = \App\Resource::where('month_year_id', $month_year->id)
+        $reports = \App\Report::where('month_year_id', $month_year->id)
             ->get();
     }
 
     if($router->app->request->ajax()){
-        return response()->json($resources);
+        return response()->json($reports);
     }
 
-    return $template_loader->render($year, $month, ['resources' => $resources]);
+    return $template_loader->render($year, $month, ['reports' => $reports]);
 });
 
 
 /**
- * get all of the resources for a given year
+ * get all of the reports for a given year
  */
 $router->get('/{year:\d{4}}', function($year) use ($router, $template_loader) {
-    $resources = [];
+    $reports = [];
     $months_year = \App\MonthYear::where('year', $year)
         ->get();
 
@@ -54,13 +54,13 @@ $router->get('/{year:\d{4}}', function($year) use ($router, $template_loader) {
             $ids[] = $my->id;
         }
 
-        $resources = \App\Resource::whereIn('month_year_id', $ids)
+        $reports = \App\Report::whereIn('month_year_id', $ids)
             ->get();
     }
 
     if($router->app->request->ajax()){
-        return response()->json($resources);
+        return response()->json($reports);
     }
 
-    return $template_loader->render($year, false, ['resources' => $resources]);
+    return $template_loader->render($year, false, ['reports' => $reports]);
 });

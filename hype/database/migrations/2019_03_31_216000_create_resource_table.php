@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 
+// i called it resource by mistake, it is really report
 class CreateResourceTable extends Migration
 {
     /**
@@ -14,7 +15,7 @@ class CreateResourceTable extends Migration
      */
     public function up()
     {
-        Schema::create('resource', function(Blueprint $table)
+        Schema::create('report', function(Blueprint $table)
         {
             $table->increments('id')->autoIncrement();
             $table->string('title')->nullable();

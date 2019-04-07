@@ -30,8 +30,8 @@
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/hype.css">
+  <link rel="stylesheet" href="/theme/year/2018/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/year/2018/css/hype.css">
 </head>
 
 <body class="hype">
@@ -70,12 +70,12 @@
         $count = 1;
         $setIndex = 0;
         $schemeIndex = 0;
-        $colorSchemeSets = include '../src/colorschemes.php';
+        $colorSchemeSets = include 'colorschemes.php';
         $currentSet = $colorSchemeSets[$setIndex];
         $scheme = $currentSet[$schemeIndex];
 
         foreach ($reports as $report){
-            echo $template->render('00-hype.php', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
+            echo view('theme.year.2018.section', ['scheme' => $scheme, 'report' => $report, 'count' => $count]);
 
             if ($count % 4 == 0) {
               $setIndex = empty($colorSchemeSets[$setIndex+1])
@@ -101,8 +101,8 @@
 </div>
   <script src="js/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/hype.js"></script>
+  <script src="/theme/year/2018/js/bootstrap.min.js"></script>
+  <script src="/theme/year/2018/js/hype.js"></script>
 
 </body>
 

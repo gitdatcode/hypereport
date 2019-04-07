@@ -232,7 +232,7 @@ class TwentyEighteenData extends Migration
         ];
 
         foreach($data as $entry){
-            DB::table('resource')->insert($entry);
+            DB::table('report')->insert($entry);
         }
     }
 
