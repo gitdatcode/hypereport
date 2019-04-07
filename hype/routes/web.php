@@ -1,15 +1,6 @@
 <?php
+use Illuminate\Http\Response;
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
 
 /**
  * homepage
@@ -22,14 +13,15 @@ $router->get('/', function () use ($router) {
 /**
  * get the resources for a specific month
  */
-$router->get('/{year:\d{4}}/{month:\d{2}}', function($month, $year) use ($router) {
+$router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($router) {
     $month_year = \App\MonthYear::where('month', $month)
         ->where('year', $year)
         ->first();
+    # TODO: return here if there is no $month_year
     $resources = \App\Resource::where('month_year_id', $month_year->id)
         ->get();
 
-    echo $resources;
+    return response()->json($resources);
 });
 
 
@@ -48,5 +40,5 @@ $router->get('/{year:\d{4}}', function($year) use ($router) {
     $resources = \App\Resource::whereIn('month_year_id', $ids)
         ->get();
 
-    echo $resources;
+    return response()->json($resources);
 });

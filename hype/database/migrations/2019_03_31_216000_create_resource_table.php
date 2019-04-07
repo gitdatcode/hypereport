@@ -17,11 +17,14 @@ class CreateResourceTable extends Migration
         Schema::create('resource', function(Blueprint $table)
         {
             $table->increments('id')->autoIncrement();
-            $table->string('title');
-            $table->string('description');
-            $table->string('image_1');
-            $table->string('image_2');
-            $table->string('image_3');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->text('description2')->nullable();
+            $table->string('color')->nullable();
+            $table->string('fill_color')->nullable();
+            $table->string('image_1')->nullable();
+            $table->string('image_2')->nullable();
+            $table->string('image_3')->nullable();
             $table->string('username');
             $table->unsignedBigInteger('month_year_id');
             $table->foreign('month_year_id')
