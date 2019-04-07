@@ -13,7 +13,7 @@ $template_loader = new TemplateLoader('index');
  * homepage
  */
 $router->get('/', function () use ($router, $template_loader) {
-    return $router->app->version();
+    return view('welcome');
 });
 
 
