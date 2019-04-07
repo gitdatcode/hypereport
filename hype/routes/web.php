@@ -35,7 +35,13 @@ $router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($rout
         return response()->json($reports);
     }
 
-    return $template_loader->render($year, $month, ['reports' => $reports]);
+    try{
+        $force_default = (bool) $_GET['force_default'];
+    }catch(\Exception $e){
+        $force_default = false;
+    }
+
+    return $template_loader->render($year, $month, ['reports' => $reports], $force_default);
 });
 
 
@@ -62,5 +68,11 @@ $router->get('/{year:\d{4}}', function($year) use ($router, $template_loader) {
         return response()->json($reports);
     }
 
-    return $template_loader->render($year, false, ['reports' => $reports]);
+    try{
+        $force_default = (bool) $_GET['force_default'];
+    }catch(\Exception $e){
+        $force_default = false;
+    }
+
+    return $template_loader->render($year, false, ['reports' => $reports], $force_default);
 });

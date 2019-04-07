@@ -29,13 +29,15 @@ class TemplateLoader {
      *      rendered tempalte
      * @return ?
      */
-    public function render($year, $month=false, array $template_variables = array()){
+    public function render($year, $month=false, array $template_variables = array(), $force_default = false){
         $this->_year = (int) $year;
         $this->_month = (int) $month;
         $template_variables['month'] = $this->_month;
         $template_variables['year'] = $this->_year;
 
-        if($this->_month && $this->_year){
+        if($force_default){
+            $template_name = $this->_default_template;
+        }elseif($this->_month && $this->_year){
             $template_name = $this->getMonthYearTemplate();
         }elseif($this->_year){
             $template_name = $this->getYearTemplate();
