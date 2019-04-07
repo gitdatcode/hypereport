@@ -5,5 +5,9 @@
 <?php echo $month; ?>
 <h2>Reports</h2>
 <pre>
-    <?php var_dump($reports); ?>
+    <?php
+    foreach($reports as $r){
+        var_dump($r->toArray());
+    }
+    ?>
 </pre>
