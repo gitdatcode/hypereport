@@ -1,0 +1,6 @@
+.month-selector{
+	z-index: 10;
+	position: fixed;
+	bottom: 5vh;
+	left: 5vw;
+}

@@ -1,0 +1,73 @@
+.hype {
+	width: 45vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+
+	@media screen and (max-width: 640px) {
+		width: 100vw;
+	}
+}
+
+
+.card {
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: inline-block;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	padding: 1rem;
+
+	border-top: 2px solid;
+	border-right: 2px solid;
+	border-left: 2px solid;
+	border-bottom: 2px solid;
+	//animated properties
+// 	border-color: rgba(244,244,244, 0);
+// 	transform: translate(20px, -40px);
+// 	transition: all .5s ease-out;
+}
+
+.card_title {
+	text-transform: uppercase;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	font-size: 4rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	//animated properties
+	// opacity: 0;
+	// transform: translate(20px, -40px);
+	// transition: all .25s ease-out .25s;
+}
+
+.card_text {
+	padding-left: 2rem;
+	padding-right: 2rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	//animated properties
+	// opacity: 0;
+	// transform: translate(20px, -40px);
+	// transition: all .25s ease-out .30s;
+}
+
+.card_button {
+	display: inline-block;
+	text-transform: uppercase;
+	margin: 2rem 2rem;
+	padding: 1rem .5rem;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+	color: map-get($s5-map--color, dc-white);
+	border-radius: 2px;
+	border: 2px solid #f4f4f4;
+	//animated properties
+	// opacity: 0;
+	// transform: translate(20px, -40px);
+	// transition: all .25s ease-out .35s;
+}

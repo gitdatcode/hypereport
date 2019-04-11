@@ -1,0 +1,23 @@
+.container {
+	width: 900px;
+	height: 100vh;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+
+	> * {
+		width: inherit;
+	}
+}
+
+.title {
+	font-size: 5em;
+	text-transform: uppercase;
+
+}
+
+.subtitle { font-size: 2em; }
+
+.title, .subtitle {
+	text-align: center;
+}
