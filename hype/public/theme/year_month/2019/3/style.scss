@@ -159,6 +159,7 @@ body {
 }
 
 .grid {
+	margin-top: 30vh;
 	min-height: 70vh;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -168,6 +169,11 @@ body {
 		flex: 1 1 auto;
 		width: 33.3%;
 	}
+}
+
+.cell-link {
+	text-decoration: none;
+	color: map-get($s5-map--color, dc-white);
 }
 
 .cell {

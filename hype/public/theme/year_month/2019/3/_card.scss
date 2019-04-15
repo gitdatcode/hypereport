@@ -1,8 +1,17 @@
 .hype {
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: all .5s ease-out;
+
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.hype-container {
 	width: 45vw;
 	height: 100vh;
-	display: flex;
-	align-items: center;
+	position: relative;
 
 	@media screen and (max-width: 640px) {
 		width: 100vw;
@@ -13,8 +22,17 @@
 .card {
 	width: 100%;
 	height: auto;
-	position: relative;
-	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	pointer-events: none;
+	transition: all .5s ease-out;
+	background-color: map-get($s5-map--color, dc-black);
+
+	display: inline;
 	margin-left: 3rem;
 	margin-right: 3rem;
 	padding: 1rem;
@@ -70,4 +88,9 @@
 	// opacity: 0;
 	// transform: translate(20px, -40px);
 	// transition: all .25s ease-out .35s;
+}
+
+.visible {
+	opacity: 1;
+	pointer-events: auto;
 }

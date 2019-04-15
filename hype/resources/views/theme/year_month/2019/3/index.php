@@ -1,8 +1,3 @@
-<?php 
-
-
- ?>
-
  <!DOCTYPE html>
  <html>
  <head>
@@ -42,20 +37,26 @@
  		</div>
  	</div>
  	<div class="container grid">
- 		<div class="cell">Mark</div>
- 		<div class="cell">Ann</div>
- 		<div class="cell">Stephanie</div>
- 		<div class="cell">AmberNechole</div>
- 		<div class="cell">Taurean</div>
+ 		<?php 
+ 			foreach($reports as $report):
+ 		 ?>
+ 		<a class="cell-link" href="javascript:showCard(<?php echo $report->id ?>)"><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
+ 		<?php endforeach; ?>
  	</div>
- 	<div class="container hype">
-			<section class="card">
-				<h2 class="card_title">Mark</h2>
-				<p class="card_text">My main goal for 2019 is seeing the light -- I put an offer in for a multiunit home and it was accepted!</p>
-				<a href="javascript:nextHype()"><div class="card_button">hype this!</div></a>
-			</section>
+ 	<div id='hype' class="hype" onclick="javascript:hideCard()">
+	 	<div class="container hype-container">
+	 		<?php 
+	 			foreach($reports as $report):
+	 		 ?>
+				<section id="card-<?php echo $report->id ?>"class="card">
+					<h2 class="card_title"><?php echo $report->username; ?></h2>
+					<p class="card_text"><?php echo $report->description; ?></p>
+					<a href="javascript:nextHype()"><div class="card_button">hype this!</div></a>
+				</section>
+			<?php endforeach; ?>
 		</div>
-
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  	<script src="/theme/year_month/2019/3/script.js" type="text/javascript"></script>
  </body>
  </html>
