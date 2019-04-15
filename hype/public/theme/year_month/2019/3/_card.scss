@@ -6,7 +6,7 @@
 	pointer-events: none;
 	transition: all .5s ease-out;
 
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 .hype-container {
 	width: 45vw;
@@ -37,10 +37,8 @@
 	margin-right: 3rem;
 	padding: 1rem;
 
-	border-top: 2px solid;
-	border-right: 2px solid;
-	border-left: 2px solid;
-	border-bottom: 2px solid;
+	border: 4px solid map-get($s5-map--color, dc-yellow);
+	border-radius: 2px;
 	//animated properties
 // 	border-color: rgba(244,244,244, 0);
 // 	transform: translate(20px, -40px);
@@ -55,6 +53,12 @@
 	font-size: 4rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+
+	text-shadow:
+   -1px -1px 0 map-get($s5-map--color, dc-yellow),  
+    1px -1px 0 map-get($s5-map--color, dc-yellow),
+    -1px 1px 0 map-get($s5-map--color, dc-yellow),
+     1px 1px 0 map-get($s5-map--color, dc-yellow);
 	//animated properties
 	// opacity: 0;
 	// transform: translate(20px, -40px);
@@ -76,14 +80,15 @@
 .card_button {
 	display: inline-block;
 	text-transform: uppercase;
+	font-weight: 700;
 	margin: 2rem 2rem;
 	padding: 1rem .5rem;
-	width: 100px;
+	width: 150px;
 	text-align: center;
 	text-decoration: none;
 	color: map-get($s5-map--color, dc-white);
 	border-radius: 2px;
-	border: 2px solid #f4f4f4;
+	background-color: map-get($s5-map--color, dc-red);
 	//animated properties
 	// opacity: 0;
 	// transform: translate(20px, -40px);

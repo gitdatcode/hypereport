@@ -6,7 +6,7 @@
  	<link rel="stylesheet" href="/theme/year_month/2019/3/style.css">
  </head>
  <body>
- 	<header class="site-header">
+ 	<header id='nav' class="site-header">
 	  <a id="logo" href="https://www.datcode.io" title="">
 	    <img alt="DATCODE" src="/theme/year_month/2019/3/assets/images/DATCODE_ENERGY_LOGOMARK_WHITE.png" />
 	  </a>
@@ -29,18 +29,19 @@
 			</div>
 	  </nav>
 	</header>
- 	<div class="container splash">
+ 	<div id="splash" class="splash">
  		<div class="content">
 	 		<h1 class="title">The DAT<span class="outline">CODE</span> <br/>Hype Report</h1>
+	 		<div class="bar"></div>
 	 		<p>Monthly achievements in Blackness <br />submitted by the DATCODE community</p>
 	 		<h2>March 2019</h2>
  		</div>
  	</div>
- 	<div class="container grid">
+ 	<div id="grid" class="container grid">
  		<?php 
  			foreach($reports as $report):
  		 ?>
- 		<a class="cell-link" href="javascript:showCard(<?php echo $report->id ?>)"><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
+ 		<a class="cell-link" href="#<?php echo $report->id ?>" onclick="javascript:showCard(<?php echo $report->id ?>)"><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
  		<?php endforeach; ?>
  	</div>
  	<div id='hype' class="hype" onclick="javascript:hideCard()">
