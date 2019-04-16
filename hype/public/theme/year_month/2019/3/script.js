@@ -48,9 +48,9 @@
         },
 
         'showPrevious': function(){
-            var next = this.active_card - 1 > - 1 ? this.active_card - 1 : cards.length - 1;
+            var previous = this.active_card - 1 > - 1 ? this.active_card - 1 : cards.length - 1;
             instances[this.active_card].hideCard();
-            instances[next].showCard();
+            instances[previous].showCard();
         },
 
         'show': function(){

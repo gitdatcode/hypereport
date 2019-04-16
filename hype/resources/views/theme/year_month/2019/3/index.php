@@ -48,14 +48,26 @@
 	 	<div class="container hype-container">
 	 		<?php 
 			 foreach($reports as $index => $report):
+				// get the names of the previous and next user
+				if($index == 0){
+					$previous_name = $reports[count($reports) - 1]->username;
+					$next_name = $reports[$index + 1]->username;
+				}else if($index == count($reports) - 1){
+					$previous_name = $reports[$index - 1]->username;
+					$next_name = $reports[0]->username;
+				}else{
+					$previous_name = $reports[$index - 1]->username;
+					$next_name = $reports[$index + 1]->username;
+				}
+
 	 		 ?>
 
 				<section id="card-<?php echo $report->id ?>"class="card">
-					<a href="#" class="previous-card">previous</a>
+					<a href="#" class="previous-card">previous (<?php echo $previous_name; ?>)</a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="javascript:nextHype()"><div class="card_button">hype this!</div></a>
-					<a href="#" class="next-card">next</a>
+					<a href="#" class="next-card">next (<?php echo $next_name; ?>)</a>
 				</section>
 			<?php	
 			endforeach;
