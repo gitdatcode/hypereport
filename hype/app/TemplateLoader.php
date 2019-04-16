@@ -35,6 +35,11 @@ class TemplateLoader {
         $template_variables['month'] = $this->_month;
         $template_variables['year'] = $this->_year;
 
+        /**
+         * get all of the months that have reports
+        */
+        $template_variables['report_months'] = \App\MonthYear::orderBy('id', 'desc')->get();
+
         if($force_default){
             $template_name = $this->_default_template;
         }elseif($this->_month && $this->_year){

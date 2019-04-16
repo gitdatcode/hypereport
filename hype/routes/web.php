@@ -9,11 +9,18 @@ use \App\TemplateLoader;
 $template_loader = new TemplateLoader('index');
 
 
+
+
 /**
  * homepage
  */
 $router->get('/', function () use ($router, $template_loader) {
-    return view('welcome');
+    /**
+     * get all of the months that have reports
+     */
+    $report_months = \App\MonthYear::orderBy('id', 'desc')->get();
+
+    return view('homepage', ['report_months' => $report_months]);
 });
 
 

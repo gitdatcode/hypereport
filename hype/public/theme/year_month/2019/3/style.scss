@@ -15,7 +15,7 @@ body {
 
   font-family: $s5_fontstack--masthead;
   overflow-x: hidden;
-  font-size: 16px;
+  font-size: 1.5em;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
@@ -24,6 +24,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
+}
+
+span {
+	font-family: 'Gilmer-Outline';
 }
 
 .site-header {
@@ -75,7 +79,7 @@ body {
 		}
 
 		.nav-sign-up {
-			background-color: map-get($s5-map--color, dc-purple);
+			background-color: map-get($s5-map--color, dc-red);
 			border-radius: 3px;
 		}
 
@@ -136,47 +140,65 @@ body {
 }
 
 .container {
-	width: 70vw;
+	width: 90vw;
 	display: block;
 	margin: 0 auto;
 }
 
 .splash {
+	margin-left: 3rem;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 }
 
 .content {
-	width: 100%;
-	text-align: center;
+	width: 70vw;
 
 	.title{
+		margin-bottom: 0;
 		font-weight: 800;
-		font-size: 5rem;
+		font-size: 8em;
 		text-transform: uppercase;
+	}
+
+	.bar {
+		display: block;
+		height: 20px;
+		background-color: map-get($s5-map--color, dc-red);
+		width: 1%;
+		transition: width 2.5s ease-out;
+		width: 100%;
 	}
 }
 
 .grid {
+	margin-top: 30vh;
 	min-height: 70vh;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: flex-start;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+}
 
-	> * {
-		flex: 1 1 auto;
-		width: 33.3%;
-	}
+
+.cell-link {
+	height: 100px;
+	text-decoration: none;
+	color: map-get($s5-map--color, dc-white);
 }
 
 .cell {
-	height: auto;
+	flex: auto;
+	flex-shrink: 1;
+	min-width: 150px;
+	margin: 0 4px;
+	height: 50px;
 	display: inline;
-	border: 2px solid map-get($s5-map--color, dc-white);
+	border: 2px solid;
 	border-radius: 2px;
 	font-size: 6rem;
-	padding:0 4rem;
+	font-weight: 700;
+	padding: 0 4rem;
 	text-transform: uppercase;
 	text-align: center;
 	white-space: normal;
@@ -186,8 +208,23 @@ body {
 			font-size: 3rem;
 			line-height: 4.25rem;
 		}
+}
 
+$colors: dc-red, dc-yellow, dc-blue, dc-green, dc-purple;
 
+	@for $i from 1 through length($colors) {
+		.grid > *:nth-child(#{length($colors)}n+#{$i}) {
+			border-color: map-get($s5-map--color, nth($colors, $i));
+			color: map-get($s5-map--color, nth($colors, $i));
+		}
+	}
+
+#splash, #grid, #nav {
+	transition: filter .5s ease-out;
+}
+
+.blur {
+	filter: blur(10px);
 }
 
 @import 'card';

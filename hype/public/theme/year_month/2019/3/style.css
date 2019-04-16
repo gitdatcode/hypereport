@@ -1,42 +1,42 @@
 @font-face {
   font-family: "Gilmer-Outline";
-  src: url("/assets/fonts/gilmer-outline/gilmer-outline.eot");
-  src: url("/assets/fonts/gilmer-outline/gilmer-outline.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-outline/gilmer-outline.woff2") format("woff2"), url("/assets/fonts/gilmer-outline/gilmer-outline.woff") format("woff"), url("/assets/fonts/gilmer-outline/gilmer-outline.ttf") format("truetype"), url("/assets/fonts/gilmer-outline/gilmer-outline.svg") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-outline/gilmer-outline.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilmer";
-  src: url("/assets/fonts/gilmer-light/gilmer-light.eot");
-  src: url("/assets/fonts/gilmer-light/gilmer-light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-light/gilmer-light.woff2") format("woff2"), url("/assets/fonts/gilmer-light/gilmer-light.woff") format("woff"), url("/assets/fonts/gilmer-light/gilmer-light.ttf") format("truetype"), url("/assets/fonts/gilmer-light/gilmer-light.svg#youworkforthem") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-light/gilmer-light.svg#youworkforthem") format("svg");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilmer";
-  src: url("/assets/fonts/gilmer-regular/gilmer-regular.eot");
-  src: url("/assets/fonts/gilmer-regular/gilmer-regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-regular/gilmer-regular.woff2") format("woff2"), url("/assets/fonts/gilmer-regular/gilmer-regular.woff") format("woff"), url("/assets/fonts/gilmer-regular/gilmer-regular.ttf") format("truetype"), url("/assets/fonts/gilmer-regular/gilmer-regular.svg") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-regular/gilmer-regular.svg") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilmer";
-  src: url("/assets/fonts/gilmer-medium/gilmer-medium.eot");
-  src: url("/assets/fonts/gilmer-medium/gilmer-medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-medium/gilmer-medium.woff2") format("woff2"), url("/assets/fonts/gilmer-medium/gilmer-medium.woff") format("woff"), url("/assets/fonts/gilmer-medium/gilmer-medium.ttf") format("truetype"), url("/assets/fonts/gilmer-medium/gilmer-medium.svg") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-medium/gilmer-medium.svg") format("svg");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilmer";
-  src: url("/assets/fonts/gilmer-bold/gilmer-bold.eot");
-  src: url("/assets/fonts/gilmer-bold/gilmer-bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-bold/gilmer-bold.woff2") format("woff2"), url("/assets/fonts/gilmer-bold/gilmer-bold.woff") format("woff"), url("/assets/fonts/gilmer-bold/gilmer-bold.ttf") format("truetype"), url("/assets/fonts/gilmer-bold/gilmer-bold.svg") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-bold/gilmer-bold.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilmer";
-  src: url("/assets/fonts/gilmer-heavy/gilmer-heavy.eot");
-  src: url("/assets/fonts/gilmer-heavy/gilmer-heavy.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gilmer-heavy/gilmer-heavy.woff2") format("woff2"), url("/assets/fonts/gilmer-heavy/gilmer-heavy.woff") format("woff"), url("/assets/fonts/gilmer-heavy/gilmer-heavy.ttf") format("truetype"), url("/assets/fonts/gilmer-heavy/gilmer-heavy.svg") format("svg");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.eot");
+  src: url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.eot?#iefix") format("embedded-opentype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.woff2") format("woff2"), url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.woff") format("woff"), url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.ttf") format("truetype"), url("/theme/year_month/2019/3/assets/fonts/gilmer-heavy/gilmer-heavy.svg") format("svg");
   font-weight: 800;
   font-style: normal;
 }
@@ -86,7 +86,7 @@ body {
   margin: 0;
   font-family: "Gilmer", BlinkMacSystemFont, -apple-system, "Roboto", "Droid Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-  font-size: 16px;
+  font-size: 1.5em;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
@@ -94,6 +94,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
+}
+
+span {
+  font-family: "Gilmer-Outline";
 }
 
 .site-header {
@@ -141,7 +145,7 @@ body {
   vertical-align: middle;
 }
 .site-header .site-nav .nav-sign-up {
-  background-color: #9E00FF;
+  background-color: #EF0053;
   border-radius: 3px;
 }
 @media screen and (max-width: 640px) {
@@ -196,44 +200,61 @@ body {
 }
 
 .container {
-  width: 70vw;
+  width: 90vw;
   display: block;
   margin: 0 auto;
 }
 
 .splash {
+  margin-left: 3rem;
   height: 100vh;
   display: flex;
   align-items: center;
 }
 
 .content {
-  width: 100%;
-  text-align: center;
+  width: 70vw;
 }
 .content .title {
+  margin-bottom: 0;
   font-weight: 800;
-  font-size: 5rem;
+  font-size: 8em;
   text-transform: uppercase;
+}
+.content .bar {
+  display: block;
+  height: 20px;
+  background-color: #EF0053;
+  width: 1%;
+  transition: width 2.5s ease-out;
+  width: 100%;
 }
 
 .grid {
+  margin-top: 30vh;
   min-height: 70vh;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
 }
-.grid > * {
-  flex: 1 1 auto;
-  width: 33.3%;
+
+.cell-link {
+  height: 100px;
+  text-decoration: none;
+  color: #F4F4F4;
 }
 
 .cell {
-  height: auto;
+  flex: auto;
+  flex-shrink: 1;
+  min-width: 150px;
+  margin: 0 4px;
+  height: 50px;
   display: inline;
-  border: 2px solid #F4F4F4;
+  border: 2px solid;
   border-radius: 2px;
   font-size: 6rem;
+  font-weight: 700;
   padding: 0 4rem;
   text-transform: uppercase;
   text-align: center;
@@ -247,14 +268,56 @@ body {
   }
 }
 
+.grid > *:nth-child(5n+1) {
+  border-color: #EF0053;
+  color: #EF0053;
+}
+
+.grid > *:nth-child(5n+2) {
+  border-color: #FFD703;
+  color: #FFD703;
+}
+
+.grid > *:nth-child(5n+3) {
+  border-color: #00E0FF;
+  color: #00E0FF;
+}
+
+.grid > *:nth-child(5n+4) {
+  border-color: #00FF8B;
+  color: #00FF8B;
+}
+
+.grid > *:nth-child(5n+5) {
+  border-color: #9E00FF;
+  color: #9E00FF;
+}
+
+#splash, #grid, #nav {
+  transition: filter 0.5s ease-out;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
 .hype {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hype-container {
   width: 45vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 @media screen and (max-width: 640px) {
-  .hype {
+  .hype-container {
     width: 100vw;
   }
 }
@@ -262,15 +325,21 @@ body {
 .card {
   width: 100%;
   height: auto;
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+  background-color: #000000;
+  display: inline;
   margin-left: 3rem;
   margin-right: 3rem;
   padding: 1rem;
-  border-top: 2px solid;
-  border-right: 2px solid;
-  border-left: 2px solid;
-  border-bottom: 2px solid;
+  border: 4px solid #FFD703;
+  border-radius: 2px;
 }
 
 .card_title {
@@ -280,6 +349,7 @@ body {
   font-size: 4rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  text-shadow: -1px -1px 0 #FFD703, 1px -1px 0 #FFD703, -1px 1px 0 #FFD703, 1px 1px 0 #FFD703;
 }
 
 .card_text {
@@ -293,14 +363,20 @@ body {
 .card_button {
   display: inline-block;
   text-transform: uppercase;
+  font-weight: 700;
   margin: 2rem 2rem;
   padding: 1rem 0.5rem;
-  width: 100px;
+  width: 150px;
   text-align: center;
   text-decoration: none;
   color: #F4F4F4;
   border-radius: 2px;
-  border: 2px solid #f4f4f4;
+  background-color: #EF0053;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
