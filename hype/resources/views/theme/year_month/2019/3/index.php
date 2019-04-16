@@ -41,20 +41,25 @@
  		<?php 
  			foreach($reports as $report):
  		 ?>
- 		<a class="cell-link" href="#<?php echo $report->id ?>" onclick="javascript:showCard(<?php echo $report->id ?>)"><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
+ 		<a class="cell-link" href="#<?php echo $report->id ?>" -data-card-id="card-<?php echo $report->id ?>" ><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
  		<?php endforeach; ?>
  	</div>
- 	<div id='hype' class="hype" onclick="javascript:hideCard()">
+ 	<div id='hype' class="hype" >
 	 	<div class="container hype-container">
 	 		<?php 
-	 			foreach($reports as $report):
+			 foreach($reports as $index => $report):
 	 		 ?>
+
 				<section id="card-<?php echo $report->id ?>"class="card">
+					<a href="#" class="previous-card">previous</a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="javascript:nextHype()"><div class="card_button">hype this!</div></a>
+					<a href="#" class="next-card">next</a>
 				</section>
-			<?php endforeach; ?>
+			<?php	
+			endforeach;
+			?>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
