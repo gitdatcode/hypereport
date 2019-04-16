@@ -28,6 +28,7 @@ $router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($rout
 
     if($month_year){
         $reports = \App\Report::where('month_year_id', $month_year->id)
+            ->inRandomOrder()
             ->get();
     }
 
@@ -61,6 +62,7 @@ $router->get('/{year:\d{4}}', function($year) use ($router, $template_loader) {
         }
 
         $reports = \App\Report::whereIn('month_year_id', $ids)
+            ->inRandomOrder()
             ->get();
     }
 
