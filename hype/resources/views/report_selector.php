@@ -19,8 +19,10 @@
 
         $selected = '';
 
-        if($month == $current_month_year->month && $year == $current_month_year->year){
-            $selected = 'selected="selected"';
+        if($current_month_year){
+            if($month == $current_month_year->month && $year == $current_month_year->year){
+                $selected = 'selected="selected"';
+            }
         }
     ?>
         <option value="<?php echo $value; ?>" <?php echo $selected; ?>><?php echo $date; ?></option>
