@@ -32,7 +32,7 @@
 (function(){
     var cell_links = $('.cell-link'),
         cards = $('.card'),
-        card_map = {},
+        month_selector = $('.month_selector'),
         splash = $('#splash'),
         grid = $('#grid'),
         hype = $('#hype'),
@@ -78,11 +78,15 @@
         card = $(card);
 
         var previous = card.find('.previous-card'),
-            next = card.find('.next-card');
+            next = card.find('.next-card'),
+            close_card = card.find('.close-card'),
+            card_id = '#' + card.attr('id'),
+            hype_this = card.find('.hype_this');
 
         var interface = {
             index: index,
             card: card,
+            card_id: card_id,
             link: cell_link,
             previous: previous,
             next: next,
@@ -96,6 +100,8 @@
 
                 card.addClass('visible');
                 overlay.show();
+
+                window.history.replaceState({}, '', card_id);
             }
         };
 
@@ -115,6 +121,19 @@
             overlay.showPrevious();
         });
 
+        close_card.on('click', function(e){
+            e.preventDefault()
+            overlay.hide();
+
+            window.history.replaceState({}, '', window.location.origin + window.location.pathname);
+        });
+
+        // hype the card
+        hype_this.on('click', function(e){
+            e.preventDefault()
+            window.open(hype_this.attr('href'), hype_this.attr('href'));
+        });
+
         return interface;
     }
 
@@ -127,4 +146,17 @@
         // there is another way to do an outer click of the card
         // overlay.hide();
     })
+
+    // change the url when the month changes
+    month_selector.on('change', function(e){
+        window.location = month_selector.val();
+    });
+
+    // on window load, show a card if it matches the hash
+    for(var i = 0, l = instances.length; i < l; i++){
+        if(instances[i].card_id == window.location.hash){
+            instances[i].showCard();
+            break;
+        }
+    }
 }());

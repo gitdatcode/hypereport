@@ -49,7 +49,11 @@ $router->get('/{year:\d{4}}/{month:\d{1,2}}', function($month, $year) use ($rout
         $force_default = false;
     }
 
-    return $template_loader->render($year, $month, ['reports' => $reports], $force_default);
+    $params = [
+        'reports' => $reports,
+        'current_month_year' => $month_year,
+    ];
+    return $template_loader->render($year, $month, $params, $force_default);
 });
 
 
