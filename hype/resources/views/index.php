@@ -40,7 +40,7 @@ $current_month = $months[$current_month_year->month];
 	 		<h1 class="title">The DAT<span class="outline">CODE</span> <br/>Hype Report</h1>
 	 		<div class="bar"></div>
 	 		<p>Monthly achievements in Blackness <br />submitted by the DATCODE community</p>
-	 		<h2><?php echo $current_month .' '. $current_month_year->year; ?></h2>
+	 		<!-- <h2><?php //echo $current_month .' '. $current_month_year->year; ?></h2> -->
  		</div>
  	</div>
  	<div id="grid" class="container grid">
@@ -52,7 +52,6 @@ $current_month = $months[$current_month_year->month];
 		<?php
         // print out the dropdown.
         // TODO: move and style this and delete this <hr>
-        echo '<hr/>';
 		echo view('report_selector', [
             'months' => $months,
             'report_months' => $report_months,

@@ -301,6 +301,34 @@ span {
   filter: blur(10px);
 }
 
+#month_selector {
+  width: 250px;
+  position: fixed;
+  left: 3rem;
+  bottom: 10vh;
+  background: #000000;
+  padding: 10px 8px 10px 14px;
+  border: 2px solid #EF0053;
+  border-radius: 2px;
+  overflow: hidden;
+}
+#month_selector .selector {
+  width: 120%;
+  background: url("/theme/year_month/2019/3/assets/images/arrow_dropdown.png") no-repeat;
+  background-size: auto;
+  background-position: 80% center;
+  background-size: 10%;
+}
+#month_selector select {
+  background: transparent;
+  font-family: "Gilmer";
+  font-weight: 700;
+  width: 150%;
+  border: none;
+  font-size: 2rem;
+  color: #F4F4F4;
+}
+
 .hype {
   width: 100vw;
   position: fixed;

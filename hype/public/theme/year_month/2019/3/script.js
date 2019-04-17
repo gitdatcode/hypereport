@@ -1,12 +1,12 @@
 
-// function toggleMenu() {
-//   var x = document.getElementById("site-nav-links");
-//   if (x.className === "site-nav-links not-visible") {
-//     x.className = "site-nav-links visible";
-//   } else {
-//     x.className = "site-nav-links not-visible";
-//   }
-// }
+function toggleMenu() {
+  var x = document.getElementById("site-nav-links");
+  if (x.className === "site-nav-links not-visible") {
+    x.className = "site-nav-links visible";
+  } else {
+    x.className = "site-nav-links not-visible";
+  }
+}
 
 // function showCard(id) {
 // 	let cardID = '#card-' + id;
@@ -142,9 +142,8 @@
     })
 
     hype.on('click', function(e){
-        // this is trigged whenever anything inside of it is clicked. even within the card
-        // there is another way to do an outer click of the card
-        // overlay.hide();
+        if( e.target !== this) { return; } 
+        else { overlay.hide(); }
     })
 
     // change the url when the month changes

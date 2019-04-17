@@ -227,4 +227,34 @@ $colors: dc-red, dc-yellow, dc-blue, dc-green, dc-purple;
 	filter: blur(10px);
 }
 
+#month_selector {
+	width: 250px;
+	position: fixed;
+	left: 3rem;
+	bottom: 10vh;
+	background: map-get($s5-map--color, dc-black);
+	padding: 10px 8px 10px 14px;
+	border: 2px solid map-get($s5-map--color, dc-red);
+	border-radius: 2px;
+	overflow: hidden;
+
+	.selector {
+		width: 120%;
+		background: url('/theme/year_month/2019/3/assets/images/arrow_dropdown.png') no-repeat;
+		background-size: auto;
+		background-position: 80% center;
+		background-size: 10%;
+	}
+
+	select {
+		background: transparent;
+		font-family: 'Gilmer';
+		font-weight: 700;
+		width: 150%;
+		border: none;
+		font-size: 2rem;
+		color: map-get($s5-map--color, dc-white);
+	}
+}
+
 @import 'card';
