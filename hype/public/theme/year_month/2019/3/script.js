@@ -107,7 +107,6 @@ function toggleMenu() {
 
         cell_link.on('click', function(e){
             e.preventDefault();
-            card_shown_index = index;
             interface.showCard();
         });
 

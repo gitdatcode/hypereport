@@ -2,7 +2,12 @@
 // month names in an array. Added a blank entry so that it is 1-indexed
 $months = ['', 'January', 'Febuary', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
-$current_month = $months[$current_month_year->month];
+
+if($current_month_year){
+    $current_month = $months[$current_month_year->month];
+}else{
+    $current_month = '';
+}
 ?>
 <!DOCTYPE html>
  <html>
@@ -39,8 +44,19 @@ $current_month = $months[$current_month_year->month];
  		<div class="content">
 	 		<h1 class="title">The DAT<span class="outline">CODE</span> <br/>Hype Report</h1>
 	 		<div class="bar"></div>
-	 		<p>Monthly achievements in Blackness <br />submitted by the DATCODE community</p>
-	 		<!-- <h2><?php //echo $current_month .' '. $current_month_year->year; ?></h2> -->
+             <?php
+             if($current_month_year):
+            ?>
+	 		    <p>Monthly achievements in Blackness <br />submitted by the DATCODE community</p>
+	 		    <h2><?php echo $current_month .' '. $current_month_year->year; ?></h2>
+            <?php
+            else:
+            ?>
+                <p>Achievements in Blackness <br />submitted by the DATCODE community</p>
+	 		    <h2><?php echo $current_year; ?></h2>
+            <?php
+            endif;
+            ?>
  		</div>
  	</div>
  	<div id="grid" class="container grid">
@@ -78,7 +94,12 @@ $current_month = $months[$current_month_year->month];
                 $card_id = sprintf('card-%s', $report->id);
 
                 //write the hype text
-                $hype_url = sprintf('https://hype.report/%s/%s#%s', $current_month_year->year, $current_month_year->month, $card_id);
+                if($current_month_year){
+                    $hype_url = sprintf('https://hype.report/%s/%s#%s', $current_month_year->year, $current_month_year->month, $card_id);
+                }else{
+                    $hype_url = sprintf('https://hype.report/%s#%s', $current_year, $card_id);
+                }
+
                 $message = sprintf("Check out %s's %s Hype Report! %s", $report->username, $current_month, $hype_url);
                 $twitter = sprintf("https://twitter.com/home?status=%s", urlencode($message));
                 // https://twitter.com/home?status=Check%20out%20Mia%27s%20February%202019%20Hype%20Report!%20https://hype.report/february#5
