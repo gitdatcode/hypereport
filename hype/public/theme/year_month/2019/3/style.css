@@ -177,6 +177,9 @@ span {
   padding: 50px 0 0 50px;
   background-color: #000000;
 }
+.site-header .site-nav-mobile .site-nav-links li > .nav-sign-up {
+  background-color: #EF0053;
+}
 .site-header .site-nav-mobile ul {
   list-style-type: none;
   padding: 0;
