@@ -121,9 +121,9 @@ function toggleMenu() {
     })
 
     hype.on('click', function(e){
-    	console.log(e);
-        if( e.target !== this) { return; } 
-        else { overlay.hide(); }
+        if(e.target == this){  
+            overlay.hide();
+        }
     })
 
     // change the url when the month changes

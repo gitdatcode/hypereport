@@ -324,20 +324,21 @@ span {
   overflow: hidden;
 }
 #month_selector .selector {
-  width: 120%;
+  width: 100%;
   background: url("/theme/year_month/2019/3/assets/images/arrow_dropdown.png") no-repeat;
   background-size: auto;
-  background-position: 80% center;
+  background-position: center right;
   background-size: 10%;
 }
 #month_selector select {
   background: transparent;
   font-family: "Gilmer";
   font-weight: 700;
-  width: 150%;
+  width: 100%;
   border: none;
   font-size: 2rem;
   color: #F4F4F4;
+  -webkit-appearance: none;
 }
 
 .hype {
