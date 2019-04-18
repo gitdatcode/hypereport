@@ -1,6 +1,6 @@
 <?php
 // month names in an array. Added a blank entry so that it is 1-indexed
-$months = ['', 'January', 'Febuary', 'March', 'April', 'May', 'June', 'July',
+$months = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
 
 if($current_month_year){
@@ -82,27 +82,38 @@ if($current_month_year){
 				// get the names of the previous and next user
 				if($index == 0){
 					$previous_name = $reports[count($reports) - 1]->username;
-					$next_name = $reports[$index + 1]->username;
+                    $next_name = $reports[$index + 1]->username;
+                    $previous_id = $reports[count($reports) - 1]->id;
+                    $next_id = $reports[$index + 1]->id;
 				}else if($index == count($reports) - 1){
 					$previous_name = $reports[$index - 1]->username;
 					$next_name = $reports[0]->username;
+                    $previous_id = $reports[$index - 1]->id;
+                    $next_id = $reports[0]->id;
 				}else{
 					$previous_name = $reports[$index - 1]->username;
 					$next_name = $reports[$index + 1]->username;
+                    $previous_id = $reports[$index - 1]->id;
+                    $next_id = $reports[$index + 1]->id;
                 }
 
                 $card_id = sprintf('card-%s', $report->id);
+                $previous_id = sprintf('card-%s', $previous_id);
+                $next_id = sprintf('card-%s', $next_id);
 
-                //write the hype text
+                //write the hype text and the actual previous next hrefs
                 if($current_month_year){
                     $hype_url = sprintf('https://hype.report/%s/%s#%s', $current_month_year->year, $current_month_year->month, $card_id);
+                    $previous_href = sprintf('/%s/%s#%s', $current_month_year->$year, $current_month_year->month, $previous_id);
+                    $next_href = sprintf('/%s/%s#%s', $current_month_year->$year, $current_month_year->month, $next_id);
                 }else{
                     $hype_url = sprintf('https://hype.report/%s#%s', $current_year, $card_id);
+                    $previous_href = sprintf('/%s#%s', $current_month_year->month, $previous_id);
+                    $next_href = sprintf('/%s#%s', $current_month_year->month, $next_id);
                 }
 
                 $message = sprintf("Check out %s's %s Hype Report! %s", $report->username, $current_month, $hype_url);
                 $twitter = sprintf("https://twitter.com/home?status=%s", urlencode($message));
-                // https://twitter.com/home?status=Check%20out%20Mia%27s%20February%202019%20Hype%20Report!%20https://hype.report/february#5
 	 		 ?>
 
 				<section id="<?php echo $card_id; ?>" class="card">
@@ -112,11 +123,11 @@ if($current_month_year){
                     // delete this comment when done
                     ?>
 					<a href="#" class="close-card">CLOSE CARD</a>
-					<a href="#" class="previous-card">previous (<?php echo $previous_name; ?>)</a>
+					<a href="<?php echo $previous_href; ?>" class="previous-card">previous (<?php echo $previous_name; ?>)</a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="<?php echo $twitter;?>" class="hype_this"><div class="card_button">hype this!</div></a>
-					<a href="#" class="next-card">next (<?php echo $next_name; ?>)</a>
+					<a href="<?php echo $next_href; ?>" class="next-card">next (<?php echo $next_name; ?>)</a>
 				</section>
 			<?php	
 			endforeach;
