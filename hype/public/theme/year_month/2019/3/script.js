@@ -9,7 +9,8 @@ function toggleMenu() {
 }
 
 (function(){
-    var cell_links = $('.cell-link'),
+    var doc = $(document),
+        cell_links = $('.cell-link'),
         cards = $('.card'),
         month_selector = $('.month_selector'),
         splash = $('#splash'),
@@ -20,6 +21,7 @@ function toggleMenu() {
 
     var overlay = {
         'active_card': -1,
+        'shown': false,
 
         'showNext': function(){
             var next = this.active_card + 1 < cards.length ? this.active_card + 1 : 0;
@@ -34,13 +36,16 @@ function toggleMenu() {
         },
 
         'show': function(){
+            this.shown = true;
             splash.addClass('blur');
             grid.addClass('blur');
             hype.addClass('visible');
+            arrowKeys.enable();
         },
 
         // this will hide the active card
         'hide': function(){
+            this.shown = false;
             splash.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');
@@ -52,6 +57,40 @@ function toggleMenu() {
             }
         }
     };
+
+    var arrowKeys = {
+        'enabled': false,
+
+        'arrowKeyEvents':  function(e){
+            if(overlay.shown){
+                e.preventDefault();
+
+                switch(e.which){
+                    // right
+                    case 39:
+                        overlay.showNext();
+                        break;
+                    
+                    //left
+                    case 37:
+                        overlay.showPrevious();
+                        break;
+                }
+            }
+        },
+
+        'enable': function(){
+            if(!this.enabled){
+                doc.on('keydown', this.arrowKeyEvents);
+                this.enabled = true;
+            }
+        },
+
+        'disable': function(){
+            doc.off('keydown', arrowKeyEvents);
+            this.enabled = false;
+        }
+    }
 
     function CardController(index, cell_link, card){
         cell_link = $(cell_link);

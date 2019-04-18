@@ -381,6 +381,7 @@ span {
 @media screen and (min-width: 640px) {
   .previous-card {
     top: 50%;
+    transform: translateY(-50%);
     left: -20%;
   }
 }
@@ -397,6 +398,7 @@ span {
 @media screen and (min-width: 640px) {
   .next-card {
     top: 50%;
+    transform: translateY(-50%);
     right: -20%;
   }
 }
