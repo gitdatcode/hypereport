@@ -15,6 +15,7 @@ if($current_month_year){
  	<title></title>
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
  	<link rel="stylesheet" href="/theme/year_month/2019/3/style.css">
+ 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
  </head>
  <body>
  	<header id='nav' class="site-header">
@@ -22,9 +23,9 @@ if($current_month_year){
 	    <img alt="DATCODE" src="/theme/year_month/2019/3/assets/images/DATCODE_ENERGY_LOGOMARK_WHITE.png" />
 	  </a>
 	  <nav id="site-nav" class="site-nav">
-	    <a href="/blog">Blog</a>
+	  	<a href="https://www.datcode.io">Go to datcode.io</a>
 	    <a href="https://resources.datcode.io">Resources</a>
-				<a class="nav-sign-up" href="/sign-up">Sign Up!</a>
+				<a class="nav-sign-up" href="https://www.datcode.io/sign-up">Join us!</a>
 	  </nav>
 	  <nav id="site-nav-mobile" class="site-nav-mobile">
 	  	<a id="menu-icon" href="javascript:void(0);" class="icon" onclick="toggleMenu()">
@@ -33,9 +34,8 @@ if($current_month_year){
 	  	<div id="site-nav-links" class="site-nav-links not-visible">
 	  		<ul>
 			    <li><a href="https://www.datcode.io">Go to datcode.io</a></li>
-			    <li><a href="/blog">Blog</a></li>
 			    <li><a href="https://resources.datcode.io">Resources</a></li>
-						<li><a class="nav-sign-up" href="/sign-up">Sign Up!</a></li>
+						<li><a class="nav-sign-up" href="/sign-up">Join us!</a></li>
 				</ul>
 			</div>
 	  </nav>
@@ -76,7 +76,6 @@ if($current_month_year){
 		?>
  	</div>
  	<div id='hype' class="hype" >
-	 	<div class="container hype-container">
 	 		<?php 
 			 foreach($reports as $index => $report):
 				// get the names of the previous and next user
@@ -108,8 +107,8 @@ if($current_month_year){
                     $next_href = sprintf('/%s/%s#%s', $current_month_year->$year, $current_month_year->month, $next_id);
                 }else{
                     $hype_url = sprintf('https://hype.report/%s#%s', $current_year, $card_id);
-                    $previous_href = sprintf('/%s#%s', $current_month_year->month, $previous_id);
-                    $next_href = sprintf('/%s#%s', $current_month_year->month, $next_id);
+                    $previous_href = sprintf('/%s#%s', $current_year, $previous_id);
+                    $next_href = sprintf('/%s#%s', $current_year, $next_id);
                 }
 
                 $message = sprintf("Check out %s's %s Hype Report! %s", $report->username, $current_month, $hype_url);
@@ -117,22 +116,16 @@ if($current_month_year){
 	 		 ?>
 
 				<section id="<?php echo $card_id; ?>" class="card">
-                    <?php
-                    // TODO: move and style the close-card, previous-card, and next-card links
-                    // keep them in the <section> though
-                    // delete this comment when done
-                    ?>
-					<a href="#" class="close-card">CLOSE CARD</a>
-					<a href="<?php echo $previous_href; ?>" class="previous-card">previous (<?php echo $previous_name; ?>)</a>
+					<a href="#" class="close-card"><img src="/theme/year_month/2019/3/assets/images/close.png" alt="Next" /></a>
+					<a href="<?php echo $previous_href; ?>" class="previous-card"><img src="/theme/year_month/2019/3/assets/images/arrow_prev.png" alt="Previous" /></a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="<?php echo $twitter;?>" class="hype_this"><div class="card_button">hype this!</div></a>
-					<a href="<?php echo $next_href; ?>" class="next-card">next (<?php echo $next_name; ?>)</a>
+					<a href="<?php echo $next_href; ?>" class="next-card"><img src="/theme/year_month/2019/3/assets/images/arrow_next.png" alt="Next" /></a>
 				</section>
 			<?php	
 			endforeach;
 			?>
-		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  	<script src="/theme/year_month/2019/3/script.js" type="text/javascript"></script>
