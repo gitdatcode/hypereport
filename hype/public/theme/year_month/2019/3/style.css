@@ -191,18 +191,21 @@ span {
   font-weight: 700;
 }
 
-.visible {
-  opacity: 1;
-}
-
 .not-visible {
   opacity: 0;
+  pointer-events: none;
 }
 
 .container {
   width: 90vw;
   display: block;
   margin: 0 auto;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100vw;
+    margin: 0;
+  }
 }
 
 .splash {
@@ -220,6 +223,11 @@ span {
   font-weight: 800;
   font-size: 8em;
   text-transform: uppercase;
+}
+@media screen and (max-width: 640px) {
+  .content .title {
+    font-size: 4rem;
+  }
 }
 .content .bar {
   display: block;
@@ -239,7 +247,7 @@ span {
 }
 
 .cell-link {
-  height: 100px;
+  height: auto;
   text-decoration: none;
   color: #F4F4F4;
 }
@@ -263,7 +271,7 @@ span {
 }
 @media screen and (max-width: 640px) {
   .cell {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 4.25rem;
   }
 }
@@ -331,6 +339,8 @@ span {
 
 .hype {
   width: 100vw;
+  z-index: 99;
+  height: 100vh;
   position: fixed;
   top: 0;
   opacity: 0;
@@ -339,20 +349,8 @@ span {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.hype-container {
-  width: 45vw;
-  height: 100vh;
-  position: relative;
-}
-@media screen and (max-width: 640px) {
-  .hype-container {
-    width: 100vw;
-  }
-}
-
 .card {
-  width: 100%;
-  height: auto;
+  width: 45vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -363,11 +361,52 @@ span {
   transition: all 0.5s ease-out;
   background-color: #000000;
   display: inline;
-  margin-left: 3rem;
-  margin-right: 3rem;
   padding: 1rem;
   border: 4px solid #FFD703;
   border-radius: 2px;
+}
+@media screen and (max-width: 640px) {
+  .card {
+    width: 80vw;
+  }
+}
+
+.previous-card {
+  position: absolute;
+}
+@media screen and (min-width: 640px) {
+  .previous-card {
+    top: 50%;
+    left: -20%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .previous-card {
+    bottom: -50%;
+    left: 10%;
+  }
+}
+
+.next-card {
+  position: absolute;
+}
+@media screen and (min-width: 640px) {
+  .next-card {
+    top: 50%;
+    right: -20%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .next-card {
+    bottom: -50%;
+    right: 10%;
+  }
+}
+
+.close-card {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .card_title {
@@ -379,6 +418,11 @@ span {
   margin-bottom: 1.5rem;
   text-shadow: -1px -1px 0 #FFD703, 1px -1px 0 #FFD703, -1px 1px 0 #FFD703, 1px 1px 0 #FFD703;
 }
+@media screen and (max-width: 640px) {
+  .card_title {
+    font-size: 2rem;
+  }
+}
 
 .card_text {
   padding-left: 2rem;
@@ -386,6 +430,11 @@ span {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 2rem;
+}
+@media screen and (max-width: 640px) {
+  .card_text {
+    font-size: 1.5rem;
+  }
 }
 
 .card_button {

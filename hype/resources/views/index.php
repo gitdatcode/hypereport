@@ -15,6 +15,7 @@ if($current_month_year){
  	<title></title>
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
  	<link rel="stylesheet" href="/theme/year_month/2019/3/style.css">
+ 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
  </head>
  <body>
  	<header id='nav' class="site-header">
@@ -76,7 +77,6 @@ if($current_month_year){
 		?>
  	</div>
  	<div id='hype' class="hype" >
-	 	<div class="container hype-container">
 	 		<?php 
 			 foreach($reports as $index => $report):
 				// get the names of the previous and next user
@@ -111,17 +111,16 @@ if($current_month_year){
                     // keep them in the <section> though
                     // delete this comment when done
                     ?>
-					<a href="#" class="close-card">CLOSE CARD</a>
-					<a href="#" class="previous-card">previous (<?php echo $previous_name; ?>)</a>
+					<a href="#" class="close-card"><img src="/theme/year_month/2019/3/assets/images/close.png" alt="Next" /></a>
+					<a href="#" class="previous-card"><img src="/theme/year_month/2019/3/assets/images/arrow_prev.png" alt="Previous" /></a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="<?php echo $twitter;?>" class="hype_this"><div class="card_button">hype this!</div></a>
-					<a href="#" class="next-card">next (<?php echo $next_name; ?>)</a>
+					<a href="#" class="next-card"><img src="/theme/year_month/2019/3/assets/images/arrow_next.png" alt="Next" /></a>
 				</section>
 			<?php	
 			endforeach;
 			?>
-		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  	<script src="/theme/year_month/2019/3/script.js" type="text/javascript"></script>

@@ -1,5 +1,7 @@
 .hype {
 	width: 100vw;
+	z-index: 99;
+	height: 100vh;
 	position: fixed;
 	top: 0;
 	opacity: 0;
@@ -8,20 +10,9 @@
 
 	background-color: rgba(0, 0, 0, 0.4);
 }
-.hype-container {
-	width: 45vw;
-	height: 100vh;
-	position: relative;
-
-	@media screen and (max-width: 640px) {
-		width: 100vw;
-	}
-}
-
 
 .card {
-	width: 100%;
-	height: auto;
+	width: 45vw;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -33,8 +24,6 @@
 	background-color: map-get($s5-map--color, dc-black);
 
 	display: inline;
-	margin-left: 3rem;
-	margin-right: 3rem;
 	padding: 1rem;
 
 	border: 4px solid map-get($s5-map--color, dc-yellow);
@@ -43,6 +32,41 @@
 // 	border-color: rgba(244,244,244, 0);
 // 	transform: translate(20px, -40px);
 // 	transition: all .5s ease-out;
+	
+	@media screen and (max-width: 640px) {
+		width: 80vw;
+	}
+}
+
+.previous-card {
+	position: absolute;
+	@media screen and (min-width: 640px) {
+		top: 50%;
+		left: -20%;
+	}
+	@media screen and (max-width: 640px) {
+		bottom: -50%;
+		left: 10%;
+	}
+}
+
+.next-card {
+	position: absolute;
+	@media screen and (min-width: 640px) {
+		top: 50%;
+		right: -20%;
+	}
+
+	@media screen and (max-width: 640px) {
+		bottom: -50%;
+		right: 10%;
+	}
+}
+
+.close-card {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
 }
 
 .card_title {
@@ -63,6 +87,10 @@
 	// opacity: 0;
 	// transform: translate(20px, -40px);
 	// transition: all .25s ease-out .25s;
+	
+	@media screen and (max-width: 640px) {
+		font-size: 2rem;
+	}
 }
 
 .card_text {
@@ -75,6 +103,10 @@
 	// opacity: 0;
 	// transform: translate(20px, -40px);
 	// transition: all .25s ease-out .30s;
+	
+	@media screen and (max-width: 640px) {
+		font-size: 1.5rem;
+	}
 }
 
 .card_button {

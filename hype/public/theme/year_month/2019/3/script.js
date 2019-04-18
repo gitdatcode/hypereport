@@ -8,27 +8,6 @@ function toggleMenu() {
   }
 }
 
-// function showCard(id) {
-// 	let cardID = '#card-' + id;
-// 	//add blur
-// 	$('#splash').addClass(' blur');
-// 	$('#grid').addClass(' blur');
-
-// 	$('#hype').addClass('visible');
-// 	$(cardID).addClass(' visible');
-// 	console.log('card should be visible');
-// }
-
-// function hideCard() {
-// 	let $blur = $('.blur');
-// 	for(let i = 0; i < $blur.length; i++) {
-// 		$( $blur[i] ).removeClass('blur');
-// 	}
-
-// 	$('.visible').removeClass('visible');
-// 	$('#hype').removeClass('visible');
-// }
-
 (function(){
     var cell_links = $('.cell-link'),
         cards = $('.card'),
@@ -36,6 +15,7 @@ function toggleMenu() {
         splash = $('#splash'),
         grid = $('#grid'),
         hype = $('#hype'),
+        off_click = $('#off-click'),
         instances = [];
 
     var overlay = {
@@ -141,6 +121,7 @@ function toggleMenu() {
     })
 
     hype.on('click', function(e){
+    	console.log(e);
         if( e.target !== this) { return; } 
         else { overlay.hide(); }
     })
