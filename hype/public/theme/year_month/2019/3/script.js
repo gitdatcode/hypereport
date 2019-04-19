@@ -49,6 +49,7 @@ function toggleMenu() {
             splash.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');
+            arrowKeys.disable();
 
             for(i in instances){
                 if(instances.hasOwnProperty(i)){
@@ -87,10 +88,10 @@ function toggleMenu() {
         },
 
         'disable': function(){
-            doc.off('keydown', arrowKeyEvents);
+            doc.off('keydown', this.arrowKeyEvents);
             this.enabled = false;
         }
-    }
+    };
 
     function CardController(index, cell_link, card){
         cell_link = $(cell_link);
