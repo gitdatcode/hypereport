@@ -80,7 +80,17 @@ if($current_month_year){
 	</header>
 	<div class=" container month">
 		<div class="content">
-			<h1 class="title"><span class="outline"><?php echo $current_month .' '. $current_month_year->year; ?></span></h1>
+			<?php
+			if($current_month_year):
+			?>
+				<h1 class="title"><span class="outline"><?php echo $current_month .' '. $current_month_year->year; ?></span></h1>
+			<?php
+			else:
+			?>
+				<h1 class="title"><span class="outline"><?php echo $current_year; ?></span></h1>
+			<?php
+			endif;
+			?>
 			<div class="bar"></div>
 		</div>
  	</div>
@@ -107,23 +117,21 @@ if($current_month_year){
 				if($index == 0){
 					$previous_name = $reports[count($reports) - 1]->username;
                     $next_name = $reports[$index + 1]->username;
-                    $previous_id = $reports[count($reports) - 1]->id;
-                    $next_id = $reports[$index + 1]->id;
+                    $previous_id = $reports[count($reports) - 1]->getUrlSlug();
+                    $next_id = $reports[$index + 1]->getUrlSlug();
 				}else if($index == count($reports) - 1){
 					$previous_name = $reports[$index - 1]->username;
 					$next_name = $reports[0]->username;
-                    $previous_id = $reports[$index - 1]->id;
-                    $next_id = $reports[0]->id;
+                    $previous_id = $reports[$index - 1]->getUrlSlug();
+                    $next_id = $reports[0]->getUrlSlug();
 				}else{
 					$previous_name = $reports[$index - 1]->username;
 					$next_name = $reports[$index + 1]->username;
                     $previous_id = $reports[$index - 1]->id;
-                    $next_id = $reports[$index + 1]->id;
+                    $next_id = $reports[$index + 1]->getUrlSlug();
                 }
 
-                $card_id = sprintf('card-%s', $report->id);
-                $previous_id = sprintf('card-%s', $previous_id);
-                $next_id = sprintf('card-%s', $next_id);
+				$card_id = $report->getUrlSlug();
 
                 //write the hype text and the actual previous next hrefs
                 if($current_month_year){

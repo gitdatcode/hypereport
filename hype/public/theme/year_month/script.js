@@ -37,7 +37,7 @@ function toggleMenu() {
 
         'show': function(){
             this.shown = true;
-            splash.addClass('blur');
+            // splash.addClass('blur');
             month.addClass('blur');
             grid.addClass('blur');
             hype.addClass('visible');
@@ -47,7 +47,7 @@ function toggleMenu() {
         // this will hide the active card
         'hide': function(){
             this.shown = false;
-            splash.removeClass('blur');
+            // splash.removeClass('blur');
             month.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');

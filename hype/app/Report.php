@@ -30,4 +30,14 @@ class Report extends Model implements AuthenticatableContract, AuthorizableContr
         'username',
         'month_year_id',
     ];
+
+    /**
+     * this will combine the username + id in a url friendly slug
+     */
+    public function getUrlSlug(){
+        $user = strtolower($this->username);
+        $user = str_replace(' ', '-', $user);
+
+        return sprintf('%s-%s', $user, $this->id);
+    }
 }
