@@ -62,7 +62,7 @@ class TemplateLoader {
     private function getMonthYearTemplate(){
         $path = sprintf($this->_month_year_template, $this->_year, $this->_month);
         $dot_path = str_replace('/', '.', $path);
-        var_dump($dot_path, view()->exists($dot_path));
+
         if(view()->exists($dot_path)){
             return $dot_path;
         }

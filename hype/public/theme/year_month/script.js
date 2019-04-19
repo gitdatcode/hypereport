@@ -37,7 +37,6 @@ function toggleMenu() {
 
         'show': function(){
             this.shown = true;
-            // splash.addClass('blur');
             month.addClass('blur');
             grid.addClass('blur');
             hype.addClass('visible');
@@ -47,7 +46,6 @@ function toggleMenu() {
         // this will hide the active card
         'hide': function(){
             this.shown = false;
-            // splash.removeClass('blur');
             month.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');
@@ -58,6 +56,8 @@ function toggleMenu() {
                     instances[i].hideCard();
                 }
             }
+
+            window.history.replaceState({}, '', window.location.origin + window.location.pathname);
         }
     };
 
@@ -145,8 +145,6 @@ function toggleMenu() {
         close_card.on('click', function(e){
             e.preventDefault()
             overlay.hide();
-
-            window.history.replaceState({}, '', window.location.origin + window.location.pathname);
         });
 
         // hype the card
