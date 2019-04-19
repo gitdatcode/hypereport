@@ -13,7 +13,7 @@ function toggleMenu() {
         cell_links = $('.cell-link'),
         cards = $('.card'),
         month_selector = $('.month_selector'),
-        splash = $('#splash'),
+        month = $('.month'),
         grid = $('#grid'),
         hype = $('#hype'),
         off_click = $('#off-click'),
@@ -38,6 +38,7 @@ function toggleMenu() {
         'show': function(){
             this.shown = true;
             splash.addClass('blur');
+            month.addClass('blur');
             grid.addClass('blur');
             hype.addClass('visible');
             arrowKeys.enable();
@@ -47,6 +48,7 @@ function toggleMenu() {
         'hide': function(){
             this.shown = false;
             splash.removeClass('blur');
+            month.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');
             arrowKeys.disable();
@@ -168,7 +170,9 @@ function toggleMenu() {
 
     // change the url when the month changes
     month_selector.on('change', function(e){
+    	if(month_selector.val() !== "default") {
         window.location = month_selector.val();
+    	}
     });
 
     // on window load, show a card if it matches the hash

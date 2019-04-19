@@ -6,7 +6,15 @@
 <div id="month_selector">
 <div class="selector">
     <select class="month_selector">
+        <?php if(!$current_month_year): ?> 
+            <option selected="selected" value='default'>Select a month...</option>
         <?php
+        else:
+        ?>
+            <option value='default'>Select a month...</option>
+        <?php
+        endif;
+        
         foreach($report_months as $rm):
             $month = $rm->month;
             $year = $rm->year;

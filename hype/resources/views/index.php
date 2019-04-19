@@ -10,18 +10,56 @@ if($current_month_year){
 }
 ?>
 <!DOCTYPE html>
- <html>
+ <html lang='en'>
  <head>
- 	<title></title>
+ 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131436546-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131436546-1');
+    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:url" content="https://hype.report" />
+  <meta property="og:type" content="product" />
+  <meta property="og:description" content="Monthly achievements in Blackness. Submitted by the DATCODE Community" />
+  <meta property="og:image" content="https://hype.report/theme/year_month/assets/images/hypereport.png" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@talkdatcode">
+  <meta name="twitter:creator" content="@talkdatcode">
+  <meta name="twitter:description" content="Monthly achievements in Blackness. Submitted by the DATCODE Community">
+  <meta name="twitter:image" content="https://hype.report/theme/year_month/assets/images/hypereport.png">
+ 		<?php
+     if($current_month_year):
+    ?>
+    <meta property="og:title" content="The DATCODE Hype Report | <?php echo $current_month .' '. $current_month_year->year; ?>" />
+    <meta name="twitter:title" content="The DATCODE Hype Report | <?php echo $current_month .' '. $current_month_year->year; ?>">
+    <title>The DATCODE Hype Report | <?php echo $current_month .' '. $current_month_year->year; ?></title>
+    <?php
+    else:
+    ?>
+    <meta property="og:title" content="The DATCODE Hype Report | <?php echo $current_year; ?>" />
+    <meta name="twitter:title" content="The DATCODE Hype Report | <?php echo $current_year; ?>">
+    <title>The DATCODE Hype Report | <?php echo $current_year; ?></title>
+    <?php
+    endif;
+    ?>
+
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- 	<link rel="stylesheet" href="/theme/year_month/2019/3/style.css">
+ 	<link rel="stylesheet" href="/theme/year_month/style.css">
  	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
  </head>
  <body>
  	<header id='nav' class="site-header">
-	  <a id="logo" href="https://www.datcode.io" title="">
-	    <img alt="DATCODE" src="/theme/year_month/2019/3/assets/images/DATCODE_ENERGY_LOGOMARK_WHITE.png" />
+	  <a id="logo" href="/" title="">
+	    <img alt="DATCODE" src="/theme/year_month/assets/images/DATCODE_ENERGY_LOGOMARK_WHITE.png" />
 	  </a>
+		<div class="nav-title">The DATCODE Hype Report</div>
 	  <nav id="site-nav" class="site-nav">
 	  	<a href="https://www.datcode.io">Go to datcode.io</a>
 	    <a href="https://resources.datcode.io">Resources</a>
@@ -40,26 +78,13 @@ if($current_month_year){
 			</div>
 	  </nav>
 	</header>
- 	<div id="splash" class="splash">
- 		<div class="content">
-	 		<h1 class="title">The DAT<span class="outline">CODE</span> <br/>Hype Report</h1>
-	 		<div class="bar"></div>
-             <?php
-             if($current_month_year):
-            ?>
-	 		    <p>Monthly achievements in Blackness <br />submitted by the DATCODE community</p>
-	 		    <h2><?php echo $current_month .' '. $current_month_year->year; ?></h2>
-            <?php
-            else:
-            ?>
-                <p>Achievements in Blackness <br />submitted by the DATCODE community</p>
-	 		    <h2><?php echo $current_year; ?></h2>
-            <?php
-            endif;
-            ?>
- 		</div>
+	<div class=" container month">
+		<div class="content">
+			<h1 class="title"><span class="outline"><?php echo $current_month .' '. $current_month_year->year; ?></span></h1>
+			<div class="bar"></div>
+		</div>
  	</div>
- 	<div id="grid" class="container grid">
+ 	 	<div id="grid" class="container grid">
  		<?php 
  			foreach($reports as $report):
  		 ?>
@@ -116,18 +141,18 @@ if($current_month_year){
 	 		 ?>
 
 				<section id="<?php echo $card_id; ?>" class="card">
-					<a href="#" class="close-card"><img src="/theme/year_month/2019/3/assets/images/close.png" alt="Next" /></a>
-					<a href="<?php echo $previous_href; ?>" class="previous-card"><img src="/theme/year_month/2019/3/assets/images/arrow_prev.png" alt="Previous" /></a>
+					<a href="#" class="close-card"><img src="/theme/year_month/assets/images/close.png" alt="Next" /></a>
+					<a href="<?php echo $previous_href; ?>" class="previous-card"><img src="/theme/year_month/assets/images/arrow_prev.png" alt="Previous" /></a>
 					<h2 class="card_title"><?php echo $report->username; ?></h2>
 					<p class="card_text"><?php echo $report->description; ?></p>
 					<a href="<?php echo $twitter;?>" class="hype_this"><div class="card_button">hype this!</div></a>
-					<a href="<?php echo $next_href; ?>" class="next-card"><img src="/theme/year_month/2019/3/assets/images/arrow_next.png" alt="Next" /></a>
+					<a href="<?php echo $next_href; ?>" class="next-card"><img src="/theme/year_month/assets/images/arrow_next.png" alt="Next" /></a>
 				</section>
 			<?php	
 			endforeach;
 			?>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 	<script src="/theme/year_month/2019/3/script.js" type="text/javascript"></script>
+ 	<script src="/theme/year_month/script.js" type="text/javascript"></script>
  </body>
  </html>

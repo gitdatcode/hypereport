@@ -40,12 +40,31 @@ span {
 	background-color: map-get($s5-map--color, dc-black);
 
 	#logo {
-		margin: 10px;
+		margin: 15px 10px;
 		float: left;
 		height: 40px;
 		display: block;
 		img {
 			height: 100%;
+		}
+
+		@media screen and (max-width: 640px) {
+			display: none;
+		}
+	}
+
+	.nav-title {
+		z-index: 0;
+		float: left;
+		margin: 14px 16px;
+		padding: 15px 20px;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 17px;
+
+		@media screen and (max-width: 640px) {
+			margin: 0;
+			padding: 20px;
 		}
 	}
 
@@ -109,8 +128,11 @@ span {
 			z-index: -1;
 			display: relative;
 			float: right;
-			padding: 50px 0 0 50px;
 			background-color: map-get($s5-map--color, dc-black);
+
+			ul {
+				margin: 0;
+			}
 
 			li > .nav-sign-up {
 				background-color: map-get($s5-map--color, dc-red);
@@ -157,12 +179,8 @@ span {
 	align-items: center;
 }
 
-.content {
-	width: 70vw;
-
 	.title{
 		margin-bottom: 0;
-		font-weight: 800;
 		font-size: 8em;
 		text-transform: uppercase;
 
@@ -179,10 +197,25 @@ span {
 		transition: width 2.5s ease-out;
 		width: 100%;
 	}
+
+
+.month {
+	height: 30vh;
+	display: flex;
+	align-items: center;
+
+	.title {
+		font-weight: 800;
+	}
+
+	.content {
+		@media screen and (max-width: 640px) {
+		margin: 0 4px;
+		}
+	}
 }
 
 .grid {
-	margin-top: 30vh;
 	min-height: 70vh;
 	display: flex;
 	flex-flow: row wrap;
@@ -249,7 +282,7 @@ $colors: dc-red, dc-yellow, dc-blue, dc-green, dc-purple;
 
 	.selector {
 		width: 100%;
-		background: url('/theme/year_month/2019/3/assets/images/arrow_dropdown.png') no-repeat;
+		background: url('/theme/year_month/assets/images/arrow_dropdown.png') no-repeat;
 		background-size: auto;
 		background-position: center right;
 		background-size: 10%;
