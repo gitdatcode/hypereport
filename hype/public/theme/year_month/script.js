@@ -40,7 +40,7 @@ function toggleMenu() {
             month.addClass('blur');
             grid.addClass('blur');
             hype.addClass('visible');
-            arrowKeys.enable();
+            keyEvents.enable();
         },
 
         // this will hide the active card
@@ -49,7 +49,7 @@ function toggleMenu() {
             month.removeClass('blur');
             grid.removeClass('blur');
             hype.removeClass('visible');
-            arrowKeys.disable();
+            keyEvents.disable();
 
             for(i in instances){
                 if(instances.hasOwnProperty(i)){
@@ -61,10 +61,10 @@ function toggleMenu() {
         }
     };
 
-    var arrowKeys = {
+    var keyEvents = {
         'enabled': false,
 
-        'arrowKeyEvents':  function(e){
+        'touchDownEvents':  function(e){
             if(overlay.shown){
                 e.preventDefault();
 
@@ -78,19 +78,24 @@ function toggleMenu() {
                     case 37:
                         overlay.showPrevious();
                         break;
+
+                    //escape
+                    case 27:
+                        overlay.hide();
+                        break;
                 }
             }
         },
 
         'enable': function(){
             if(!this.enabled){
-                doc.on('keydown', this.arrowKeyEvents);
+                doc.on('keydown', this.touchDownEvents);
                 this.enabled = true;
             }
         },
 
         'disable': function(){
-            doc.off('keydown', this.arrowKeyEvents);
+            doc.off('keydown', this.touchDownEvents);
             this.enabled = false;
         }
     };
