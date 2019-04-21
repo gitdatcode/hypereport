@@ -49,7 +49,7 @@ if($current_month_year){
     <?php
     endif;
     ?>
-
+	<link rel="icon" href="/theme/year_month/assets/images/bolt-icon.png" type="image/png">
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
  	<link rel="stylesheet" href="/theme/year_month/style.css">
  	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
