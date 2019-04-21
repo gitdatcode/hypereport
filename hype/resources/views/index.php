@@ -59,7 +59,7 @@ if($current_month_year){
 	  <a id="logo" href="/" title="">
 	    <img alt="DATCODE" src="/theme/year_month/assets/images/DATCODE_ENERGY_LOGOMARK_WHITE.png" />
 	  </a>
-		<div class="nav-title">The DATCODE Hype Report</div>
+		<div class="nav-title"><a href="/">The DATCODE Hype Report</a></div>
 	  <nav id="site-nav" class="site-nav">
 	  	<a href="https://www.datcode.io">Go to datcode.io</a>
 	    <a href="https://resources.datcode.io">Resources</a>
