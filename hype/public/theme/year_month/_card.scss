@@ -43,10 +43,12 @@
 	@media screen and (min-width: 640px) {
 		top: 50%;
 		left: -20%;
+		transform: translateY(-50%);
 	}
 	@media screen and (max-width: 640px) {
 		bottom: -50%;
 		left: 10%;
+		transform: translateY(-50%);
 	}
 }
 
@@ -55,11 +57,13 @@
 	@media screen and (min-width: 640px) {
 		top: 50%;
 		right: -20%;
+		transform: translateY(-50%);
 	}
 
 	@media screen and (max-width: 640px) {
 		bottom: -50%;
 		right: 10%;
+		transform: translateY(-50%);
 	}
 }
 
