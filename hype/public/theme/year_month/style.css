@@ -386,6 +386,10 @@ span {
   border: none;
   font-size: 2rem;
   -webkit-appearance: none;
+  color: #f4f4f4
+}
+#month_selector select option {
+  color: #000;
 }
 .hype {
   width: 100vw;
