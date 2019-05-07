@@ -129,13 +129,28 @@ if($current_month_year){
             $card_title = $report->description2 ? sprintf('title="%s', $report->description2) : '';
             ?>
 
-            <section id="<?php echo $card_id; ?>" class="card" <?php echo $card_title;?> >
+            <section id="<?php echo $card_id; ?>" class="card">
                 <a href="#" class="close-card"><img src="/theme/year_month/assets/images/close.png" alt="Next" /></a>
                 <a href="<?php echo $previous_href; ?>" class="previous-card"><img src="/theme/year_month/assets/images/arrow_prev.png" alt="Previous" /></a>
                 <h2 class="card_title"><?php echo $report->username; ?></h2>
-                <p class="card_text"><?php echo $report->description; ?></p>
+                <p class="card_text">
+                    <?php
+                    echo $report->description;
+
+                    // show the second description if it exists
+                    if($report->description2):
+                    ?>
+                        </p>
+                        <hr />
+                        <p class="card_text">
+                    <?php
+                        echo $report->description2;
+                    endif;
+                    ?>
+                </p>
 
                 <?php
+                // do not show the share button if the user chooses not to
                 if($report->share):
                 ?>
                     <a href="<?php echo $twitter;?>" class="hype_this"><div class="card_button">hype this!</div></a>
