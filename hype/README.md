@@ -39,3 +39,49 @@ Each month or year is capable of having a custom theme. If a custom theme isn't 
     * Custom year assets live in `public/theme/year/$year`
     * Custom year/month templates live in `public/theme/year_month/$year/$month`
     * Once in their correct folders, assets can be arranged to the theme's desires
+
+## Adding New Data
+
+> this can be done locally and pushed to the github repo
+
+* Run `php artisan make:migration april_2019`
+    * This will create a file in `hype/database/migrations` called `2019_05_07_015212_april_2019.php` (everything before `april_2019` is automatically generated based on the date and time the command was run)
+* Open that file and use this general structure to add records for the month
+
+```php
+    public function up()
+    {
+        DB::table('month_year')->insert(
+            [
+                'month' => 4,
+                'year' => 2019,
+            ]
+        );
+
+        $month_year = \App\MonthYear::where('year', 2019)
+            ->where('month', 4)->first();
+
+        $reports = [
+            [
+                'username' => 'Some username',
+                'description' => "What the user is hype about",
+                'description2' => "There could be more",
+                'image_1' => '',
+                'color' => '',
+                'fill_color' => '',
+                'month_year_id' => $month_year->id,
+            ],
+            ...
+        ];
+
+        foreach($reports as $entry){
+            DB::table('report')->insert($entry);
+        }
+    }
+    ...
+```
+
+* Run the migration
+    * `php artisan migrate`
+* Commit the files and push to github
+* Pull on the remote sever
