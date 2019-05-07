@@ -52,7 +52,14 @@ if($current_month_year){
 	<link rel="icon" href="/theme/year_month/assets/images/bolt-icon.png" type="image/png">
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
  	<link rel="stylesheet" href="/theme/year_month/style.css">
- 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+     <style>
+         .card hr {
+            width: 90%;
+            margin: 5% auto;
+            border: 1px solid #EF0053;
+         }
+     </style>
  </head>
  <body>
     <?php
