@@ -143,6 +143,15 @@ class April2019 extends Migration
                 'fill_color' => '',
                 'month_year_id' => $month_year->id,
             ],
+            [
+                'username' => '',
+                'description' => "",
+                'description2' => "",
+                'image_1' => '',
+                'color' => '',
+                'fill_color' => '',
+                'month_year_id' => $month_year->id,
+            ],
         ];
 
         foreach($reports as $entry){
