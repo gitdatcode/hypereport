@@ -4,7 +4,7 @@
 	  </a>
 	  <nav id="site-nav" class="site-nav">
 	  	<a href="https://www.datcode.io">Go to datcode.io</a>
-	    <a href="https://resources.datcode.io">Resources</a>
+	    <a href="https://datcode.io/resources">Resources</a>
 				<a class="nav-sign-up" href="https://www.datcode.io/sign-up">Join us!</a>
 	  </nav>
 	  <nav id="site-nav-mobile" class="site-nav-mobile">
@@ -14,7 +14,7 @@
 	  	<div id="site-nav-links" class="site-nav-links not-visible">
 	  		<ul>
 			    <li><a href="https://www.datcode.io">Go to datcode.io</a></li>
-			    <li><a href="https://resources.datcode.io">Resources</a></li>
+			    <li><a href="https://datcode.io/resources">Resources</a></li>
 						<li><a class="nav-sign-up" href="/sign-up">Join us!</a></li>
 				</ul>
 			</div>

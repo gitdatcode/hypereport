@@ -26,7 +26,7 @@ class Navbar extends React.Component {
 			  <nav id="site-nav" className="site-nav">
 			    <a href="/">Home</a>
 			    <a href="https://www.datcode.io/blog">Blog</a>
-			    <a href="https://resources.datcode.io">Resources</a>
+			    <a href="https://datcode.io/resources">Resources</a>
 						<a className="nav-sign-up" href="">Submit</a>
 			  </nav>
 			  <nav id="site-nav-mobile" className="site-nav-mobile">
@@ -37,7 +37,7 @@ class Navbar extends React.Component {
 			  		<ul>
 					    <li><a href="/">Home</a></li>
 					    <li><a href="/blog">Blog</a></li>
-					    <li><a href="https://resources.datcode.io">Resources</a></li>
+					    <li><a href="https://datcode.io/resources">Resources</a></li>
 								<li><a className="nav-sign-up" href="/submit">Submit</a></li>
 						</ul>
 					</div>
