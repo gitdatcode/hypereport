@@ -31,7 +31,7 @@ if($current_month_year){
 }
 
 $message = sprintf("Check out %s's %s Hype Report! %s", $report->username, $current_month, $hype_url);
-$twitter = sprintf("https://twitter.com/home?status=%s", urlencode($message));
+$twitter = sprintf("https://twitter.com/intent/tweet?text=%s", urlencode($message));
 $card_title = $report->description2 ? sprintf('title="%s', $report->description2) : '';
 ?>
 
