@@ -44,6 +44,7 @@ Each month or year is capable of having a custom theme. If a custom theme isn't 
 
 > this can be done locally and pushed to the github repo
 
+* `cd hype`
 * Run `php artisan make:migration april_2019`
     * This will create a file in `hype/database/migrations` called `2019_05_07_015212_april_2019.php` (everything before `april_2019` is automatically generated based on the date and time the command was run)
 * Open that file and use this general structure to add records for the month

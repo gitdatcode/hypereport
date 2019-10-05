@@ -41,7 +41,7 @@ $card_title = $report->description2 ? sprintf('title="%s', $report->description2
     <h2 class="card_title"><?php echo $report->username; ?></h2>
     <p class="card_text">
         <?php
-        echo $report->description;
+        echo nl2br($report->description);
 
         // show the second description if it exists
         if($report->description2):
@@ -50,7 +50,7 @@ $card_title = $report->description2 ? sprintf('title="%s', $report->description2
             <hr />
             <p class="card_text">
         <?php
-            echo $report->description2;
+            echo nl2br($report->description2);
         endif;
         ?>
     </p>
