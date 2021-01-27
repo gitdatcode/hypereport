@@ -75,6 +75,7 @@ class Year2020 extends Migration
                 'month_year_id' => $month_year->id,
             ],
             [
+                'share' => false,
                 'username' => 'Alicia L.',
                 'description' => "I completed 2 apprenticeships at the same time (Full stack Dev & Software Quality Engineering 🙌🏾. I completed them both and finished all projects and got offers from both but took one offer.",
                 'description2' => "Black Excellence andI finally know what I want to do in Development.....Backend!!",
