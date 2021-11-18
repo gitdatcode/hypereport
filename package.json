@@ -10,9 +10,32 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@babel/preset-react": "^7.16.0",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
         "axios": "^0.21",
+        "babel-eslint": "^10.1.0",
+        "eslint-plugin-react": "^7.27.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "node-sass": "^6.0.1",
+        "postcss": "^8.1.14",
+        "postcss-import": "^14.0.2",
+        "react-refresh": "^0.10.0",
+        "sass": "^1.43.4",
+        "sass-loader": "^12.3.0"
+    },
+    "dependencies": {
+        "@inertiajs/inertia": "^0.10.1",
+        "@inertiajs/inertia-react": "^0.7.1",
+        "@inertiajs/progress": "^0.2.6",
+        "@sentry/browser": "^6.15.0",
+        "autoprefixer": "^10.4.0",
+        "classnames": "^2.3.1",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.2.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-use": "^17.3.1",
+        "resolve-url-loader": "^4.0.0"
     }
 }
