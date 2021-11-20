@@ -3320,7 +3320,9 @@ var ThankYou = /*#__PURE__*/function (_Component) {
   _createClass(ThankYou, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "welcome"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "emoji"
       }, "\uD83C\uDF89"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Thank you for submitting your 2021 Hype Report! We can't wait to share this with the rest of the world!"));
     }
@@ -3529,7 +3531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 3px solid red !important;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n}\n\n.input-text {\n  width: 300px;\n  height: 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  padding-left: 5px;\n  background-color: #000;\n  color: #fff;\n}\n\n.radio, .input-area {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  height: 130vh;\n  font-size: 19px;\n  overflow-y: auto;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\n.input-area {\n  height: 70px;\n  width: 300px;\n  border-radius: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\nh1 {\n  font-size: 2.5rem;\n  margin-top: 50px;\n  display: flex;\n  justify-content: center;\n}\n\n.emoji {\n  display: flex;\n  justify-content: center;\n  font-size: 6rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 3px solid red !important;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n}\n\n.input-text {\n  width: 300px;\n  height: 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  padding-left: 5px;\n  background-color: #000;\n  color: #fff;\n  border:1px solid #fff;\n}\n\n.radio, .input-area {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  height: 130vh;\n  overflow-y: auto;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\n.input-area {\n  height: 70px;\n  width: 300px;\n  border-radius: 10px;\n  background-color: #000;\n  color: #fff;\n  margin-bottom: 20px;\n  border:1px solid #fff;\n}\n\nh1 {\n  font-size: 2.5rem;\n  display: flex;\n  justify-content: center;\n}\n\n.emoji {\n  display: flex;\n  justify-content: center;\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 80vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
