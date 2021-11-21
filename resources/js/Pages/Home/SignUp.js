@@ -46,8 +46,8 @@ class SignUp extends Component {
     
     renderForm(){
         return(
-            <Form className="mt-5 signup">
-                {this.state.errors ? this.state.errors : ''}
+            <Form className="signup">
+                <p className="form-errors">{this.state.errors ? this.state.errors : ''}</p>
                 <Form.Group>
                     <Form.Label>First Name</Form.Label><br/>
                         <input
@@ -111,6 +111,7 @@ class SignUp extends Component {
                             type="radio"
                             value="social"
                             onChange={this.onSocialChange}
+                            defaultChecked={this.state.selectedSocial === 'no'}
                             />
                             no
                         </label>
@@ -135,6 +136,7 @@ class SignUp extends Component {
                             type="radio"
                             value="event"
                             onChange={this.onEventChange}
+                            defaultChecked={this.state.selectedEvent === 'no'}
                             />
                             no
                         </label>
@@ -148,7 +150,6 @@ class SignUp extends Component {
                             type="radio"
                             value="newsletter"
                             onChange={this.onNewsLetterChange}
-                            defaultChecked={this.state.selectedNewsletter === 'yes'}
                             />
                             yes
                         </label>

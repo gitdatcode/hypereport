@@ -3158,8 +3158,10 @@ var SignUp = /*#__PURE__*/function (_Component) {
     key: "renderForm",
     value: function renderForm() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        className: "mt-5 signup"
-      }, this.state.errors ? this.state.errors : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        className: "signup"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "form-errors"
+      }, this.state.errors ? this.state.errors : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "firstName",
         className: this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text',
         type: "text",
@@ -3197,7 +3199,8 @@ var SignUp = /*#__PURE__*/function (_Component) {
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "radio",
         value: "social",
-        onChange: this.onSocialChange
+        onChange: this.onSocialChange,
+        defaultChecked: this.state.selectedSocial === 'no'
       }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
         className: "radio"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Can we share this on our 2021 Hype event?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
@@ -3208,14 +3211,14 @@ var SignUp = /*#__PURE__*/function (_Component) {
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "radio",
         value: "event",
-        onChange: this.onEventChange
+        onChange: this.onEventChange,
+        defaultChecked: this.state.selectedEvent === 'no'
       }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
         className: "radio"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Can we sign you up for DATCURRENT, our super awesome newsletter launching in 2022?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "radio",
         value: "newsletter",
-        onChange: this.onNewsLetterChange,
-        defaultChecked: this.state.selectedNewsletter === 'yes'
+        onChange: this.onNewsLetterChange
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "radio",
         value: "newsletter",
@@ -3531,7 +3534,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 2px solid red !important;\n}\n\n.input-text {\n  width: 300px;\n  height: 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 80px;\n  width: 300px;\n  border-radius: 10px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 1px solid red !important;\n}\n\n.input-text {\n  width: 350px;\n  height: 40px;\n  border-radius: 6px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 100px;\n  width: 350px;\n  border-radius: 6px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.form-errors {\n  font-weight: bolder;\n  color: red;\n  font-size: 25px;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
