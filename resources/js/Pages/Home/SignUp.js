@@ -52,7 +52,7 @@ class SignUp extends Component {
                     <Form.Label>First Name</Form.Label><br/>
                         <input
                            name="firstName"
-                           className={this.state.isSubmitting && !this.state.firstName ? 'error' : '', 'input-text'}
+                           className={this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text'}
                            type="text"
                            id="firstName"
                            value={this.state.firstName}
@@ -63,7 +63,7 @@ class SignUp extends Component {
                     <Form.Label>Last Name</Form.Label><br/>
                         <input
                            name="lastName"
-                           className={this.state.isSubmitting && !this.state.lastName ? 'error' : '','input-text'}
+                           className={this.state.isSubmitting && !this.state.lastName ? 'error input-text' : 'white input-text'}
                            type="text"
                            id="lastName"
                            value={this.state.lastName}
@@ -74,7 +74,7 @@ class SignUp extends Component {
                     <Form.Label>Email</Form.Label><br/>
                         <input
                            name="email"
-                           className={this.state.isSubmitting && !this.state.email ? 'error' : '', 'input-text'}
+                           className={this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text'}
                            type="email"
                            id="email"
                            value={this.state.email}
@@ -85,7 +85,7 @@ class SignUp extends Component {
                     <Form.Label>Hype yourself! What achievements (large or small!) are you celebrating this year?</Form.Label>
                         <textarea
                            name="achievements"
-                           className={this.state.isSubmitting && !this.state.achievements ? 'error' : '', 'input-area'}
+                           className={this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area'}
                            type="achievements"
                            id="achievements"
                            value={this.state.achievements}

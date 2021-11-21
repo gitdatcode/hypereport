@@ -3161,28 +3161,28 @@ var SignUp = /*#__PURE__*/function (_Component) {
         className: "mt-5 signup"
       }, this.state.errors ? this.state.errors : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "firstName",
-        className: (this.state.isSubmitting && !this.state.firstName ? 'error' : '', 'input-text'),
+        className: this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text',
         type: "text",
         id: "firstName",
         value: this.state.firstName,
         onChange: this.onValueChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "lastName",
-        className: (this.state.isSubmitting && !this.state.lastName ? 'error' : '', 'input-text'),
+        className: this.state.isSubmitting && !this.state.lastName ? 'error input-text' : 'white input-text',
         type: "text",
         id: "lastName",
         value: this.state.lastName,
         onChange: this.onValueChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "email",
-        className: (this.state.isSubmitting && !this.state.email ? 'error' : '', 'input-text'),
+        className: this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text',
         type: "email",
         id: "email",
         value: this.state.email,
         onChange: this.onValueChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Hype yourself! What achievements (large or small!) are you celebrating this year?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
         name: "achievements",
-        className: (this.state.isSubmitting && !this.state.achievements ? 'error' : '', 'input-area'),
+        className: this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area',
         type: "achievements",
         id: "achievements",
         value: this.state.achievements,
@@ -3531,7 +3531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 3px solid red !important;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n}\n\n.input-text {\n  width: 300px;\n  height: 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  padding-left: 5px;\n  background-color: #000;\n  color: #fff;\n  border:1px solid #fff;\n}\n\n.radio, .input-area {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  height: 130vh;\n  overflow-y: auto;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\n.input-area {\n  height: 70px;\n  width: 300px;\n  border-radius: 10px;\n  background-color: #000;\n  color: #fff;\n  margin-bottom: 20px;\n  border:1px solid #fff;\n}\n\nh1 {\n  font-size: 2.5rem;\n  display: flex;\n  justify-content: center;\n}\n\n.emoji {\n  display: flex;\n  justify-content: center;\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 80vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 2px solid red !important;\n}\n\n.input-text {\n  width: 300px;\n  height: 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 80px;\n  width: 300px;\n  border-radius: 10px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
