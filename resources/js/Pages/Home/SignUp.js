@@ -97,6 +97,7 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="social"
                             type="radio"
                             value="social"
                             onChange={this.onSocialChange}
@@ -108,10 +109,10 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="social"
                             type="radio"
                             value="social"
                             onChange={this.onSocialChange}
-                            defaultChecked={this.state.selectedSocial === 'no'}
                             />
                             no
                         </label>
@@ -122,6 +123,7 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="event"
                             type="radio"
                             value="event"
                             onChange={this.onEventChange}
@@ -133,10 +135,10 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="event"
                             type="radio"
                             value="event"
                             onChange={this.onEventChange}
-                            defaultChecked={this.state.selectedEvent === 'no'}
                             />
                             no
                         </label>
@@ -147,9 +149,11 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="newsletter"
                             type="radio"
                             value="newsletter"
                             onChange={this.onNewsLetterChange}
+                            defaultChecked={this.state.selectedNewsletter === 'yes'}
                             />
                             yes
                         </label>
@@ -157,6 +161,7 @@ class SignUp extends Component {
                     <div>
                         <label>
                             <input
+                            name="newsletter"
                             type="radio"
                             value="newsletter"
                             onChange={this.onNewsLetterChange}
