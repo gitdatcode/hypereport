@@ -20,8 +20,11 @@ $template_loader = new TemplateLoader('index');
 */
 
 Route::get('/submit', function () {
-    return Inertia::render('Home/Index');
-});
+    return Inertia::render('Submit/Index');
+})->name('report');
+
+Route::post('/report', \App\Http\RequestHandlers\PostReportRequestHandler::class)
+    ->name('report.post');
 
 Route::get('/', function () {
     /**

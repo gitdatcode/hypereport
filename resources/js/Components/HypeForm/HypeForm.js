@@ -1,11 +1,11 @@
-
 import  React, { Component } from "react";
+import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import ThankYou from "./ThankYou";
-import './SignUp.css'
+import ThankYou from "../../Components/ThankYou/ThankYou";
+import Woops from "../../Components/Woops/Woops";
 
-class SignUp extends Component {
+class HypeForm extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -18,32 +18,34 @@ class SignUp extends Component {
             selectedNewsletter: '',
             errors: '',
             isSubmitting: false,
-            filled: false
+            filled: false,
+            woops: false,
+            responded: false
         }
         this.onEventChange = this.onEventChange.bind(this)
         this.onSocialChange = this.onSocialChange.bind(this)
         this.onNewsLetterChange = this.onNewsLetterChange.bind(this)
         this.onValueChange = this.onValueChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.renderWelcome = this.renderWelcome.bind(this)
+        this.renderResponse = this.renderResponse.bind(this)
     }
-    
+
     onSocialChange(event) {
         this.setState({selectedSocial: event.target.value});
     }
 
     onEventChange(event){
         this.setState({selectedEvent: event.target.value})
-    }    
+    }
 
     onNewsLetterChange(event){
         this.setState({selectedNewsletter: event.target.value})
-    }    
+    }
 
     onValueChange(e){
         this.setState({[e.target.name]:e.target.value});
     }
-    
+
     renderForm(){
         return(
             <Form className="signup">
@@ -179,31 +181,38 @@ class SignUp extends Component {
         )
     }
 
-    renderWelcome(){
-        return(
-            <div>
-                <ThankYou />
-            </div>
+    renderResponse (){
+        return (
+            <div>{this.state.filled ? <ThankYou />: <Woops />}</div>
         )
     }
-    
+
     handleSubmit(e){
-      e.preventDefault()
-      this.setState({isSubmitting: true})
-      if ( !this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements
-        || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter){
-        this.setState({errors: 'All fields are required.', filled: false});
-        return
-      }
-      return (
-        this.setState({filled: true})
-      )
-    } 
+        e.preventDefault();
+        this.setState({errors: '', filled: false});
+        this.setState({isSubmitting: true})
+        if ( !this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements
+            || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter){
+            return
+        }
+
+        axios.post(`${app.url}/report`, this.state)
+            .then((response) => {
+                window.scrollTo(0, 0);
+                this.setState({responded: true})
+                if (response.data.success === true) {
+                    this.setState({filled: true})
+                } else {
+                    this.setState({woops: true})
+                }
+        });
+
+    }
     render(){
         return(
-            <div>{this.state.filled ? this.renderWelcome() : this.renderForm()}</div>
+            <div>{this.state.responded ? this.renderResponse() : this.renderForm()}</div>
         )
     }
 }
 
-export default SignUp
+export default HypeForm

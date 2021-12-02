@@ -2971,10 +2971,387 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Home/Index.js":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Home/Index.js ***!
-  \******************************************/
+/***/ "./resources/js/Components/HypeForm/HypeForm.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Components/HypeForm/HypeForm.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var _Components_ThankYou_ThankYou__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/ThankYou/ThankYou */ "./resources/js/Components/ThankYou/ThankYou.js");
+/* harmony import */ var _Components_Woops_Woops__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Woops/Woops */ "./resources/js/Components/Woops/Woops.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+
+var HypeForm = /*#__PURE__*/function (_Component) {
+  _inherits(HypeForm, _Component);
+
+  var _super = _createSuper(HypeForm);
+
+  function HypeForm(props) {
+    var _this;
+
+    _classCallCheck(this, HypeForm);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      achievements: '',
+      selectedSocial: '',
+      selectedEvent: '',
+      selectedNewsletter: '',
+      errors: '',
+      isSubmitting: false,
+      filled: false,
+      woops: false,
+      responded: false
+    };
+    _this.onEventChange = _this.onEventChange.bind(_assertThisInitialized(_this));
+    _this.onSocialChange = _this.onSocialChange.bind(_assertThisInitialized(_this));
+    _this.onNewsLetterChange = _this.onNewsLetterChange.bind(_assertThisInitialized(_this));
+    _this.onValueChange = _this.onValueChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.renderResponse = _this.renderResponse.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(HypeForm, [{
+    key: "onSocialChange",
+    value: function onSocialChange(event) {
+      this.setState({
+        selectedSocial: event.target.value
+      });
+    }
+  }, {
+    key: "onEventChange",
+    value: function onEventChange(event) {
+      this.setState({
+        selectedEvent: event.target.value
+      });
+    }
+  }, {
+    key: "onNewsLetterChange",
+    value: function onNewsLetterChange(event) {
+      this.setState({
+        selectedNewsletter: event.target.value
+      });
+    }
+  }, {
+    key: "onValueChange",
+    value: function onValueChange(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "renderForm",
+    value: function renderForm() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        className: "signup"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "form-errors"
+      }, this.state.errors ? this.state.errors : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "firstName",
+        className: this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text',
+        type: "text",
+        id: "firstName",
+        value: this.state.firstName,
+        onChange: this.onValueChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "lastName",
+        className: this.state.isSubmitting && !this.state.lastName ? 'error input-text' : 'white input-text',
+        type: "text",
+        id: "lastName",
+        value: this.state.lastName,
+        onChange: this.onValueChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "email",
+        className: this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text',
+        type: "email",
+        id: "email",
+        value: this.state.email,
+        onChange: this.onValueChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Hype yourself! What achievements (large or small!) are you celebrating this year?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
+        name: "achievements",
+        className: this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area',
+        type: "achievements",
+        id: "achievements",
+        value: this.state.achievements,
+        onChange: this.onValueChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+        className: "radio"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we share this on social media?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "social",
+        type: "radio",
+        value: "social",
+        onChange: this.onSocialChange,
+        defaultChecked: this.state.selectedSocial === 'yes'
+      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "social",
+        type: "radio",
+        value: "social",
+        onChange: this.onSocialChange
+      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+        className: "radio"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we share this on our 2021 Hype event?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "event",
+        type: "radio",
+        value: "event",
+        onChange: this.onEventChange,
+        defaultChecked: this.state.selectedEvent === 'yes'
+      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "event",
+        type: "radio",
+        value: "event",
+        onChange: this.onEventChange
+      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+        className: "radio"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we sign you up for DATCURRENT, our super awesome newsletter launching in 2022?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "newsletter",
+        type: "radio",
+        value: "newsletter",
+        onChange: this.onNewsLetterChange,
+        defaultChecked: this.state.selectedNewsletter === 'yes'
+      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "newsletter",
+        type: "radio",
+        value: "newsletter",
+        onChange: this.onNewsLetterChange
+      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+        className: "mb-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        variant: "primary",
+        type: "submit",
+        onClick: this.handleSubmit,
+        className: "submit"
+      }, "SUBMIT")));
+    }
+  }, {
+    key: "renderResponse",
+    value: function renderResponse() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.state.filled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_ThankYou_ThankYou__WEBPACK_IMPORTED_MODULE_2__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Woops_Woops__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.setState({
+        errors: '',
+        filled: false
+      });
+      this.setState({
+        isSubmitting: true
+      });
+
+      if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter) {
+        return;
+      }
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("".concat(app.url, "/report"), this.state).then(function (response) {
+        window.scrollTo(0, 0);
+
+        _this2.setState({
+          responded: true
+        });
+
+        if (response.data.success === true) {
+          _this2.setState({
+            filled: true
+          });
+        } else {
+          _this2.setState({
+            woops: true
+          });
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.state.responded ? this.renderResponse() : this.renderForm());
+    }
+  }]);
+
+  return HypeForm;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HypeForm);
+
+/***/ }),
+
+/***/ "./resources/js/Components/ThankYou/ThankYou.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Components/ThankYou/ThankYou.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var ThankYou = /*#__PURE__*/function (_Component) {
+  _inherits(ThankYou, _Component);
+
+  var _super = _createSuper(ThankYou);
+
+  function ThankYou(props) {
+    _classCallCheck(this, ThankYou);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(ThankYou, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "welcome"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "emoji"
+      }, "\uD83C\uDF89"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Thank you for submitting your 2021 Hype Report! We can't wait to share this with the rest of the world!"));
+    }
+  }]);
+
+  return ThankYou;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThankYou);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Woops/Woops.js":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Woops/Woops.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var Woops = /*#__PURE__*/function (_Component) {
+  _inherits(Woops, _Component);
+
+  var _super = _createSuper(Woops);
+
+  function Woops(props) {
+    _classCallCheck(this, Woops);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Woops, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "welcome"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "emoji"
+      }, "\u2757"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Woops! Something went wrong. Please refresh the page and try again."));
+    }
+  }]);
+
+  return Woops;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Woops);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Submit/Index.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Submit/Index.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2984,8 +3361,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _SignUp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignUp */ "./resources/js/Pages/Home/SignUp.js");
-/* harmony import */ var _SignUp_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SignUp.css */ "./resources/js/Pages/Home/SignUp.css");
+/* harmony import */ var _Components_HypeForm_HypeForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/HypeForm/HypeForm */ "./resources/js/Components/HypeForm/HypeForm.js");
+/* harmony import */ var _Components_HypeForm_HypeForm_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/HypeForm/HypeForm.css */ "./resources/js/Components/HypeForm/HypeForm.css");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3039,7 +3416,7 @@ var Index = /*#__PURE__*/function (_Component) {
         className: "row step-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "col-12 col-md-6 offset-md-3 step step-0"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SignUp__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_HypeForm_HypeForm__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
     }
   }]);
 
@@ -3047,299 +3424,6 @@ var Index = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Home/SignUp.js":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/Home/SignUp.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
-/* harmony import */ var _ThankYou__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThankYou */ "./resources/js/Pages/Home/ThankYou.js");
-/* harmony import */ var _SignUp_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignUp.css */ "./resources/js/Pages/Home/SignUp.css");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-
-
-
-var SignUp = /*#__PURE__*/function (_Component) {
-  _inherits(SignUp, _Component);
-
-  var _super = _createSuper(SignUp);
-
-  function SignUp(props) {
-    var _this;
-
-    _classCallCheck(this, SignUp);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      achievements: '',
-      selectedSocial: '',
-      selectedEvent: '',
-      selectedNewsletter: '',
-      errors: '',
-      isSubmitting: false,
-      filled: false
-    };
-    _this.onEventChange = _this.onEventChange.bind(_assertThisInitialized(_this));
-    _this.onSocialChange = _this.onSocialChange.bind(_assertThisInitialized(_this));
-    _this.onNewsLetterChange = _this.onNewsLetterChange.bind(_assertThisInitialized(_this));
-    _this.onValueChange = _this.onValueChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.renderWelcome = _this.renderWelcome.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(SignUp, [{
-    key: "onSocialChange",
-    value: function onSocialChange(event) {
-      this.setState({
-        selectedSocial: event.target.value
-      });
-    }
-  }, {
-    key: "onEventChange",
-    value: function onEventChange(event) {
-      this.setState({
-        selectedEvent: event.target.value
-      });
-    }
-  }, {
-    key: "onNewsLetterChange",
-    value: function onNewsLetterChange(event) {
-      this.setState({
-        selectedNewsletter: event.target.value
-      });
-    }
-  }, {
-    key: "onValueChange",
-    value: function onValueChange(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
-    }
-  }, {
-    key: "renderForm",
-    value: function renderForm() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        className: "signup"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "form-errors"
-      }, this.state.errors ? this.state.errors : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "firstName",
-        className: this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text',
-        type: "text",
-        id: "firstName",
-        value: this.state.firstName,
-        onChange: this.onValueChange
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "lastName",
-        className: this.state.isSubmitting && !this.state.lastName ? 'error input-text' : 'white input-text',
-        type: "text",
-        id: "lastName",
-        value: this.state.lastName,
-        onChange: this.onValueChange
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "email",
-        className: this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text',
-        type: "email",
-        id: "email",
-        value: this.state.email,
-        onChange: this.onValueChange
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Hype yourself! What achievements (large or small!) are you celebrating this year?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
-        name: "achievements",
-        className: this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area',
-        type: "achievements",
-        id: "achievements",
-        value: this.state.achievements,
-        onChange: this.onValueChange
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
-        className: "radio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Can we share this on social media?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "social",
-        type: "radio",
-        value: "social",
-        onChange: this.onSocialChange,
-        defaultChecked: this.state.selectedSocial === 'yes'
-      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "social",
-        type: "radio",
-        value: "social",
-        onChange: this.onSocialChange
-      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
-        className: "radio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Can we share this on our 2021 Hype event?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "event",
-        type: "radio",
-        value: "event",
-        onChange: this.onEventChange,
-        defaultChecked: this.state.selectedEvent === 'yes'
-      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "event",
-        type: "radio",
-        value: "event",
-        onChange: this.onEventChange
-      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
-        className: "radio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Can we sign you up for DATCURRENT, our super awesome newsletter launching in 2022?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "newsletter",
-        type: "radio",
-        value: "newsletter",
-        onChange: this.onNewsLetterChange,
-        defaultChecked: this.state.selectedNewsletter === 'yes'
-      }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        name: "newsletter",
-        type: "radio",
-        value: "newsletter",
-        onChange: this.onNewsLetterChange
-      }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Group, {
-        className: "mb-4"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        variant: "primary",
-        type: "submit",
-        onClick: this.handleSubmit,
-        className: "submit"
-      }, "SUBMIT")));
-    }
-  }, {
-    key: "renderWelcome",
-    value: function renderWelcome() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ThankYou__WEBPACK_IMPORTED_MODULE_1__["default"], null));
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      this.setState({
-        isSubmitting: true
-      });
-
-      if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter) {
-        this.setState({
-          errors: 'All fields are required.',
-          filled: false
-        });
-        return;
-      }
-
-      return this.setState({
-        filled: true
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.state.filled ? this.renderWelcome() : this.renderForm());
-    }
-  }]);
-
-  return SignUp;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SignUp);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Home/ThankYou.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Home/ThankYou.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _SignUp_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SignUp.css */ "./resources/js/Pages/Home/SignUp.css");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var ThankYou = /*#__PURE__*/function (_Component) {
-  _inherits(ThankYou, _Component);
-
-  var _super = _createSuper(ThankYou);
-
-  function ThankYou(props) {
-    _classCallCheck(this, ThankYou);
-
-    return _super.call(this, props);
-  }
-
-  _createClass(ThankYou, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "welcome"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "emoji"
-      }, "\uD83C\uDF89"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Thank you for submitting your 2021 Hype Report! We can't wait to share this with the rest of the world!"));
-    }
-  }]);
-
-  return ThankYou;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThankYou);
 
 /***/ }),
 
@@ -3522,10 +3606,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Pages/Home/SignUp.css":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Pages/Home/SignUp.css ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Components/HypeForm/HypeForm.css":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Components/HypeForm/HypeForm.css ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3539,7 +3623,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".error {\n  border: 1px solid red !important;\n}\n\n.input-text {\n  width: 350px;\n  height: 40px;\n  border-radius: 6px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 100px;\n  width: 350px;\n  border-radius: 6px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.form-errors {\n  font-weight: bolder;\n  color: red;\n  font-size: 25px;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#app {\n    padding-top: 100px;\n}\n\n.error {\n  border: 1px solid red !important;\n}\n\n.input-text {\n  width: 350px;\n  height: 40px;\n  border-radius: 6px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 100px;\n  width: 350px;\n  border-radius: 6px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.form-errors {\n  font-weight: bolder;\n  color: red;\n  font-size: 25px;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39173,10 +39257,10 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Home/SignUp.css":
-/*!********************************************!*\
-  !*** ./resources/js/Pages/Home/SignUp.css ***!
-  \********************************************/
+/***/ "./resources/js/Components/HypeForm/HypeForm.css":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/HypeForm/HypeForm.css ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -39186,7 +39270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SignUp_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SignUp.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Pages/Home/SignUp.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_HypeForm_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./HypeForm.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Components/HypeForm/HypeForm.css");
 
             
 
@@ -39195,11 +39279,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SignUp_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_HypeForm_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SignUp_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_HypeForm_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -39562,13 +39646,8 @@ module.exports = warning;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Home/Index": "./resources/js/Pages/Home/Index.js",
-	"./Home/Index.js": "./resources/js/Pages/Home/Index.js",
-	"./Home/SignUp": "./resources/js/Pages/Home/SignUp.js",
-	"./Home/SignUp.css": "./resources/js/Pages/Home/SignUp.css",
-	"./Home/SignUp.js": "./resources/js/Pages/Home/SignUp.js",
-	"./Home/ThankYou": "./resources/js/Pages/Home/ThankYou.js",
-	"./Home/ThankYou.js": "./resources/js/Pages/Home/ThankYou.js"
+	"./Submit/Index": "./resources/js/Pages/Submit/Index.js",
+	"./Submit/Index.js": "./resources/js/Pages/Submit/Index.js"
 };
 
 

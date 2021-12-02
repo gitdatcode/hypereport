@@ -57,7 +57,7 @@ if($current_month_year){
          .card hr {
             width: 90%;
             margin: 5% auto;
-            border: 1px solid #EF0053;
+            border: 1px solid #EF0053;
          }
      </style>
  </head>
@@ -82,7 +82,7 @@ if($current_month_year){
 		</div>
  	</div>
  	 	<div id="grid" class="container grid">
- 		<?php 
+ 		<?php
  			foreach($reports as $report):
  		 ?>
  		<a class="cell-link" href="#<?php echo $report->id ?>" -data-card-id="card-<?php echo $report->id ?>" ><div id='cell-<?php echo $report->id ?>' class="cell"><?php echo $report->username ?></div></a>
@@ -98,7 +98,7 @@ if($current_month_year){
 		?>
  	</div>
  	<div id='hype' class="hype" >
-        <?php 
+        <?php
         foreach($reports as $index => $report){
             $args = [
                 'index' => $index,
