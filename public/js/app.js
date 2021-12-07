@@ -3035,11 +3035,13 @@ var HypeForm = /*#__PURE__*/function (_Component) {
       firstName: '',
       lastName: '',
       email: '',
+      confirmEmail: '',
       achievements: '',
       selectedSocial: '',
       selectedEvent: '',
       selectedNewsletter: '',
       errors: '',
+      errorField: '',
       isSubmitting: false,
       filled: false,
       woops: false,
@@ -3085,9 +3087,11 @@ var HypeForm = /*#__PURE__*/function (_Component) {
     value: function renderForm() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
         className: "signup"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        className: "formTitle"
+      }, "Share your 2021 HypeReport"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "form-errors"
-      }, this.state.errors ? this.state.errors : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, this.state.errors && this.state.errorField === '' ? this.state.errors : this.state.errors ? 'Please see errors below.' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "firstName",
         className: this.state.isSubmitting && !this.state.firstName ? 'error input-text' : 'white input-text',
         type: "text",
@@ -3108,7 +3112,16 @@ var HypeForm = /*#__PURE__*/function (_Component) {
         id: "email",
         value: this.state.email,
         onChange: this.onValueChange
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Hype yourself! What achievements (large or small!) are you celebrating this year?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Please confirm"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        name: "confirmEmail",
+        className: this.state.isSubmitting && !this.state.confirmEmail ? 'error input-text' : 'white input-text',
+        type: "email",
+        id: "confirmEmail",
+        value: this.state.confirmEmail,
+        onChange: this.onValueChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Hype yourself!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "form-errors"
+      }, this.state.errorField === 'achievements' && this.state.errors ? this.state.errors : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "What achievements (large or small!) are you celebrating this year?"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
         name: "achievements",
         className: this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area',
         type: "achievements",
@@ -3120,39 +3133,39 @@ var HypeForm = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we share this on social media?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "social",
         type: "radio",
-        value: "social",
+        value: "yes",
         onChange: this.onSocialChange,
         defaultChecked: this.state.selectedSocial === 'yes'
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "social",
         type: "radio",
-        value: "social",
+        value: "no",
         onChange: this.onSocialChange
       }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
         className: "radio"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we share this on our 2021 Hype event?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "event",
         type: "radio",
-        value: "event",
+        value: "yes",
         onChange: this.onEventChange,
         defaultChecked: this.state.selectedEvent === 'yes'
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "event",
         type: "radio",
-        value: "event",
+        value: "no",
         onChange: this.onEventChange
       }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
         className: "radio"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, null, "Can we sign you up for DATCURRENT, our super awesome newsletter launching in 2022?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "newsletter",
         type: "radio",
-        value: "newsletter",
+        value: "yes",
         onChange: this.onNewsLetterChange,
         defaultChecked: this.state.selectedNewsletter === 'yes'
       }), "yes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         name: "newsletter",
         type: "radio",
-        value: "newsletter",
+        value: "no",
         onChange: this.onNewsLetterChange
       }), "no"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
         className: "mb-4"
@@ -3182,6 +3195,23 @@ var HypeForm = /*#__PURE__*/function (_Component) {
         isSubmitting: true
       });
 
+      if (this.state.email !== this.state.confirmEmail) {
+        this.setState({
+          errors: 'Please double check your email address.'
+        });
+        return;
+      }
+
+      if (this.state.achievements.length < 70) {
+        this.setState({
+          errors: 'Please tell us a little bit more.'
+        });
+        this.setState({
+          errorField: 'achievements'
+        });
+        return;
+      }
+
       if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter) {
         return;
       }
@@ -3202,6 +3232,12 @@ var HypeForm = /*#__PURE__*/function (_Component) {
             woops: true
           });
         }
+      })["catch"](function (response) {
+        console.log(response);
+
+        _this2.setState({
+          woops: true
+        });
       });
     }
   }, {
@@ -3623,7 +3659,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#app {\n    padding-top: 100px;\n}\n\n.error {\n  border: 1px solid red !important;\n}\n\n.input-text {\n  width: 350px;\n  height: 40px;\n  border-radius: 6px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 100px;\n  width: 350px;\n  border-radius: 6px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.form-errors {\n  font-weight: bolder;\n  color: red;\n  font-size: 25px;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#app {\n    padding-top: 100px;\n}\n\n.error {\n  border: 1px solid red !important;\n}\n\n.input-text {\n  width: 350px;\n  height: 40px;\n  border-radius: 6px;\n  margin-bottom: 20px;\n  margin-top: 7px;\n  padding-left: 10px;\n  background-color: #000;\n  color: #fff;\n}\n\n.white {\n  border: 1px solid #fff;\n}\n\n.input-area {\n  height: 100px;\n  width: 350px;\n  border-radius: 6px;\n  background-color: #000;\n  margin-top: 7px;\n  color: #fff;\n  margin-bottom: 20px;\n  padding-left: 10px;\n  padding-top: 10px;\n}\n\n.signup {\n  width: 50%;\n  margin: auto;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  height: 130vh;\n}\n\n.form-errors {\n  font-weight: bolder;\n  color: red;\n  font-size: 25px;\n}\n\n.radio {\n  margin-bottom: 20px;\n}\n\n.container-fluid {\n  background-color: #000;\n  color: #fff;\n  margin: 0;\n  padding: 0;\n  font-family: Poppins, sans-serif;\n}\n\n.submit {\n  background-color: #9E00FF;\n  color: white;\n  padding: 5px;\n  width: 100px;\n  border-radius:4px;\n  font-weight: bold;\n  cursor: pointer;\n  border: none;\n}\n\nh1, .emoji {\n  display: flex;\n  justify-content: center;\n}\n\nh1.formTitle {\n    justify-content: left;\n    font-size: 3rem;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\n.emoji {\n  font-size: 6rem;\n}\n\n.welcome {\n  height: 100vh;\n  width: 50%;\n  margin: auto;\n  overflow: hidden;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
