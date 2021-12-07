@@ -12,11 +12,13 @@ class HypeForm extends Component {
             firstName: '',
             lastName: '',
             email: '',
+            confirmEmail: '',
             achievements: '',
             selectedSocial: '',
             selectedEvent: '',
             selectedNewsletter: '',
             errors: '',
+            errorField: '',
             isSubmitting: false,
             filled: false,
             woops: false,
@@ -49,7 +51,12 @@ class HypeForm extends Component {
     renderForm(){
         return(
             <Form className="signup">
-                <p className="form-errors">{this.state.errors ? this.state.errors : ''}</p>
+                <h1 className="formTitle">Share your 2021 HypeReport</h1>
+                <p className="form-errors">
+                    { (this.state.errors && this.state.errorField === '')
+                        ? this.state.errors
+                        : this.state.errors ? 'Please see errors below.' : '' }
+                </p>
                 <Form.Group>
                     <Form.Label>First Name</Form.Label><br/>
                         <input
@@ -74,17 +81,32 @@ class HypeForm extends Component {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Email</Form.Label><br/>
-                        <input
-                           name="email"
-                           className={this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text'}
-                           type="email"
-                           id="email"
-                           value={this.state.email}
-                           onChange={this.onValueChange}
-                        />
+                    <input
+                        name="email"
+                        className={this.state.isSubmitting && !this.state.email ? 'error input-text' : 'white input-text'}
+                        type="email"
+                        id="email"
+                        value={this.state.email}
+                        onChange={this.onValueChange}
+                    />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Hype yourself! What achievements (large or small!) are you celebrating this year?</Form.Label>
+                    <Form.Label>Please confirm</Form.Label><br/>
+                    <input
+                        name="confirmEmail"
+                        className={this.state.isSubmitting && !this.state.confirmEmail ? 'error input-text' : 'white input-text'}
+                        type="email"
+                        id="confirmEmail"
+                        value={this.state.confirmEmail}
+                        onChange={this.onValueChange}
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <h3>Hype yourself!</h3>
+                    <p className="form-errors">
+                        { this.state.errorField === 'achievements' && this.state.errors ? this.state.errors : '' }
+                    </p>
+                    <Form.Label>What achievements (large or small!) are you celebrating this year?</Form.Label> <br />
                         <textarea
                            name="achievements"
                            className={this.state.isSubmitting && !this.state.achievements ? 'error input-area' : 'white input-area'}
@@ -101,7 +123,7 @@ class HypeForm extends Component {
                             <input
                             name="social"
                             type="radio"
-                            value="social"
+                            value="yes"
                             onChange={this.onSocialChange}
                             defaultChecked={this.state.selectedSocial === 'yes'}
                             />
@@ -113,7 +135,7 @@ class HypeForm extends Component {
                             <input
                             name="social"
                             type="radio"
-                            value="social"
+                            value="no"
                             onChange={this.onSocialChange}
                             />
                             no
@@ -127,7 +149,7 @@ class HypeForm extends Component {
                             <input
                             name="event"
                             type="radio"
-                            value="event"
+                            value="yes"
                             onChange={this.onEventChange}
                             defaultChecked={this.state.selectedEvent === 'yes'}
                             />
@@ -139,7 +161,7 @@ class HypeForm extends Component {
                             <input
                             name="event"
                             type="radio"
-                            value="event"
+                            value="no"
                             onChange={this.onEventChange}
                             />
                             no
@@ -153,7 +175,7 @@ class HypeForm extends Component {
                             <input
                             name="newsletter"
                             type="radio"
-                            value="newsletter"
+                            value="yes"
                             onChange={this.onNewsLetterChange}
                             defaultChecked={this.state.selectedNewsletter === 'yes'}
                             />
@@ -165,7 +187,7 @@ class HypeForm extends Component {
                             <input
                             name="newsletter"
                             type="radio"
-                            value="newsletter"
+                            value="no"
                             onChange={this.onNewsLetterChange}
                             />
                             no
@@ -191,6 +213,17 @@ class HypeForm extends Component {
         e.preventDefault();
         this.setState({errors: '', filled: false});
         this.setState({isSubmitting: true})
+        if (this.state.email !== this.state.confirmEmail) {
+            this.setState({errors: 'Please double check your email address.'});
+            return
+        }
+
+        if (this.state.achievements.length < 70) {
+            this.setState({errors: 'Please tell us a little bit more.'});
+            this.setState({errorField: 'achievements'});
+            return
+        }
+
         if ( !this.state.firstName || !this.state.lastName || !this.state.email || !this.state.achievements
             || !this.state.selectedEvent || !this.state.selectedSocial || !this.state.selectedNewsletter){
             return
@@ -205,7 +238,11 @@ class HypeForm extends Component {
                 } else {
                     this.setState({woops: true})
                 }
-        });
+            })
+            .catch((response) => {
+                console.log(response);
+                this.setState({woops: true})
+            });
 
     }
     render(){
