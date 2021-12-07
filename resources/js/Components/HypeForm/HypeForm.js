@@ -235,6 +235,8 @@ class HypeForm extends Component {
                 this.setState({responded: true})
                 if (response.data.success === true) {
                     this.setState({filled: true})
+                    this.setState({woops: false})
+                    this.setState({errors: false})
                 } else {
                     this.setState({woops: true})
                 }
