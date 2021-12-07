@@ -34,10 +34,6 @@ class PostReportRequestHandler extends BaseRequestHandler
             $response['data'] = $hypeReport->toArray();
         }
 
-        $reports = DB::table('hypereports')->get()->toArray();
-        $reports = DB::table('hypereports')->get()->toArray();
-        Log::info(var_export($reports));
-
         return response()->json($response);
     }
 

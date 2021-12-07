@@ -3227,6 +3227,14 @@ var HypeForm = /*#__PURE__*/function (_Component) {
           _this2.setState({
             filled: true
           });
+
+          _this2.setState({
+            woops: false
+          });
+
+          _this2.setState({
+            errors: false
+          });
         } else {
           _this2.setState({
             woops: true
