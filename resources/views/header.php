@@ -15,7 +15,7 @@
 	  		<ul>
 			    <li><a href="https://www.datcode.io">Go to datcode.io</a></li>
 			    <li><a href="https://www.datcode.io/resources">Resources</a></li>
-						<li><a class="nav-sign-up" href="/sign-up">Join us!</a></li>
+						<li><a class="nav-sign-up" href="/submit">SUBMIT</a></li>
 				</ul>
 			</div>
 	  </nav>

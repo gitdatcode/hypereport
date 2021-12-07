@@ -118,11 +118,6 @@ span {
 .site-header #logo img {
   height: 100%;
 }
-@media screen and (max-width: 812px) {
-  .site-header #logo {
-    display: none;
-  }
-}
 .site-header .nav-title {
   z-index: 0;
   float: left;
