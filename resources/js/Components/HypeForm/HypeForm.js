@@ -195,7 +195,7 @@ class HypeForm extends Component {
                     </div>
                 </Form.Group>
                 <Form.Group className="mb-4">
-                    <Button variant="primary" type="submit" onClick={this.handleSubmit} className="submit">
+                    <Button variant="primary" size="lg" type="submit" onClick={this.handleSubmit} className="submit">
                         SUBMIT
                     </Button>
                 </Form.Group>

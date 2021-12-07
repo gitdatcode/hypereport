@@ -1,5 +1,6 @@
 #app {
     padding-top: 100px;
+    color: #d0d0d0;
 }
 
 .error {
@@ -7,38 +8,37 @@
 }
 
 .input-text {
-  width: 350px;
+  width: 100%;
   height: 40px;
   border-radius: 6px;
   margin-bottom: 20px;
   margin-top: 7px;
   padding-left: 10px;
   background-color: #000;
-  color: #fff;
+  color: #d9d9d9;
 }
 
 .white {
-  border: 1px solid #fff;
+  border: 1px solid #d9d9d9;
 }
 
 .input-area {
-  height: 100px;
-  width: 350px;
   border-radius: 6px;
   background-color: #000;
   margin-top: 7px;
-  color: #fff;
+  color: #d9d9d9;
   margin-bottom: 20px;
   padding-left: 10px;
   padding-top: 10px;
+    width: 100%;
+    min-height: 200px;
 }
 
 .signup {
-  width: 50%;
-  margin: auto;
-  padding-top: 50px;
-  padding-bottom: 20px;
-  height: 130vh;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px;
 }
 
 .form-errors {
@@ -53,7 +53,6 @@
 
 .container-fluid {
   background-color: #000;
-  color: #fff;
   margin: 0;
   padding: 0;
   font-family: Poppins, sans-serif;

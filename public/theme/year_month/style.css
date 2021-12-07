@@ -109,19 +109,14 @@ span {
   z-index: 99;
   background-color: #000000;
 }
-.site-header #logo {
+.site-header .site-logo {
   margin: 15px 10px;
   float: left;
   height: 40px;
   display: block;
 }
-.site-header #logo img {
+.site-header .site-logo img {
   height: 100%;
-}
-@media screen and (max-width: 812px) {
-  .site-header #logo {
-    display: none;
-  }
 }
 .site-header .nav-title {
   z-index: 0;
@@ -173,6 +168,9 @@ span {
   border-radius: 3px;
 }
 @media screen and (max-width: 812px) {
+    .site-logo {
+        display: none;
+    }
   .site-header .site-nav {
     display: none;
   }
@@ -204,7 +202,7 @@ span {
 .site-header .site-nav-mobile .site-nav-links ul {
   margin: 0;
 }
-.site-header .site-nav-mobile .site-nav-links li > .nav-sign-up {
+.main-cta, .site-header .site-nav-mobile .site-nav-links li > .nav-sign-up {
   background-color: #EF0053;
 }
 @media screen and (min-width: 451px) {
@@ -217,13 +215,23 @@ span {
   padding: 0;
   text-align: right;
 }
-.site-header .site-nav-mobile a {
+.main-cta, .site-header .site-nav-mobile a {
   display: block;
   padding: 10px;
   text-decoration: none;
   text-transform: uppercase;
   color: #F4F4F4;
   font-weight: 700;
+}
+.main-cta { display: none; }
+@media screen and (max-width: 812px) {
+    #logo {
+        display:none;
+    }
+    .main-cta {
+        display: block;
+        padding: 20px;
+    }
 }
 
 .not-visible {

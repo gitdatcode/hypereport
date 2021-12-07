@@ -13,7 +13,7 @@
             url: '{{ config('app.url') }}'
         }
     </script>
-<body>
+<body class="hypereport">
 @include('header')
 @inertia
 
